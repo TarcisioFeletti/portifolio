@@ -1,0 +1,26 @@
+<section id="formacao" class="education" aria-labelledby="education-title">
+  <div>
+    <p class="kicker">{{ education().kicker }}</p>
+    <h2 id="education-title" class="section-title title">{{ education().title }}</h2>
+    <ul class="courses" role="list">
+      @for (item of education().items; track item.course) {
+        <li class="course">
+          <p class="course-name">{{ item.course }}</p>
+          <p class="course-meta">{{ item.school }} · {{ item.period }}</p>
+        </li>
+      }
+    </ul>
+  </div>
+  <div>
+    <h3 class="kicker">{{ education().certKicker }}</h3>
+    <ul class="certs" role="list">
+      @for (cert of education().certs; track cert) {
+        <li class="cert">{{ cert }}</li>
+      }
+    </ul>
+    <div class="research">
+      <h3 class="kicker">{{ education().research.kicker }}</h3>
+      <p>{{ education().research.body }}</p>
+    </div>
+  </div>
+</section>

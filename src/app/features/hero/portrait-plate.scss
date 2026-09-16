@@ -1,0 +1,341 @@
+.plate {
+  position: relative;
+  margin: 0 var(--gutter);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background-color: var(--color-paper);
+  background-image:
+    linear-gradient(var(--color-grid-ink) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-grid-ink) 1px, transparent 1px);
+  background-size: var(--grid-size) var(--grid-size);
+  color: var(--color-ink);
+}
+
+.tint {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  background:
+    radial-gradient(120% 80% at 50% 10%, rgb(240 115 30 / 16%), transparent 62%),
+    linear-gradient(180deg, rgb(12 12 12 / 14%), transparent 26%, rgb(12 12 12 / 16%));
+}
+
+.perforation {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 4;
+  width: 20px;
+  background-image: repeating-linear-gradient(
+    180deg,
+    var(--color-ink) 0 12px,
+    transparent 12px 30px
+  );
+  opacity: 0.85;
+
+  &.left {
+    left: 0;
+  }
+
+  &.right {
+    right: 0;
+  }
+}
+
+.plate-hud {
+  position: absolute;
+  z-index: 5;
+  top: 12px;
+  left: 32px;
+  right: 32px;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  color: var(--color-plate-hud);
+}
+
+.stage {
+  --stage-height: clamp(380px, 52vw, 620px);
+  --viewfinder-size: calc(var(--stage-height) * 0.76);
+  position: relative;
+  height: var(--stage-height);
+}
+
+.viewfinder {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 76%;
+  aspect-ratio: 1;
+  max-width: 82%;
+}
+
+.viewfinder-border {
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgb(12 12 12 / 30%);
+}
+
+.portrait {
+  position: absolute;
+  inset: -13% 0 -36%;
+  filter: contrast(1.14) brightness(1.02);
+
+  img {
+    object-fit: contain;
+  }
+}
+
+.viewfinder-marks {
+  --corner-size: 28px;
+  --corner-width: 3px;
+  --corner-color: var(--color-ink);
+  position: absolute;
+  inset: -2px;
+}
+
+.crosshair {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 22px;
+  height: 22px;
+  transform: translate(-50%, -50%);
+  background:
+    linear-gradient(rgb(12 12 12 / 45%), rgb(12 12 12 / 45%)) center / 22px 1px no-repeat,
+    linear-gradient(rgb(12 12 12 / 45%), rgb(12 12 12 / 45%)) center / 1px 22px no-repeat;
+}
+
+.focus {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: var(--color-ink);
+  background: var(--color-paper);
+  border: 1px solid var(--color-line-strong);
+  border-radius: 3px;
+  padding: 4px 9px;
+  white-space: nowrap;
+}
+
+.stickers {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  pointer-events: none;
+  color: var(--color-ink);
+}
+
+.sticker {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-sticker);
+  text-transform: uppercase;
+}
+
+.sticker-title {
+  font-weight: 900;
+  font-size: clamp(13px, 1.5vw, 18px);
+  line-height: 1;
+}
+
+.sticker-sub {
+  margin-top: 4px;
+  font-weight: 800;
+  font-size: 10px;
+  letter-spacing: 0.06em;
+}
+
+.s1 {
+  top: 6%;
+  left: 3%;
+  width: clamp(104px, 13vw, 150px);
+  height: clamp(104px, 13vw, 150px);
+  justify-content: center;
+  padding: 10px;
+  border-radius: 50%;
+  background: var(--color-teal);
+  text-align: center;
+  transform: rotate(-4deg);
+
+  .sticker-title {
+    font-size: clamp(14px, 1.7vw, 19px);
+    line-height: 0.95;
+  }
+
+  .sticker-sub {
+    margin-top: 6px;
+    font-weight: 700;
+    font-size: 9px;
+    line-height: 1.25;
+    letter-spacing: 0.03em;
+  }
+}
+
+.s2 {
+  top: 40%;
+  left: 1%;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: var(--color-yellow);
+  transform: rotate(-7deg);
+
+  .sticker-title {
+    letter-spacing: -0.01em;
+  }
+
+  .sticker-sub {
+    font-size: 9px;
+    letter-spacing: 0.1em;
+  }
+}
+
+.s3 {
+  bottom: 12%;
+  left: 6%;
+  padding: 12px 18px;
+  border-radius: 4px;
+  background: var(--color-orange);
+  transform: rotate(6deg);
+
+  .sticker-title {
+    line-height: 1.02;
+  }
+
+  .sticker-sub {
+    margin-top: 3px;
+  }
+}
+
+.s4 {
+  top: 24%;
+  right: 4%;
+  padding: 12px 18px;
+  border-radius: 999px 999px 999px 4px;
+  background: var(--color-pink);
+  transform: rotate(4deg);
+
+  .sticker-title {
+    font-size: clamp(14px, 1.7vw, 20px);
+  }
+}
+
+.s5 {
+  top: 56%;
+  right: 1%;
+  padding: 11px 16px;
+  border-radius: 4px;
+  background: var(--color-teal);
+  transform: rotate(-8deg);
+
+  .sticker-title {
+    line-height: 1.02;
+  }
+
+  .sticker-sub {
+    margin-top: 3px;
+  }
+}
+
+.s6 {
+  bottom: 6%;
+  right: 12%;
+  width: clamp(96px, 12vw, 132px);
+  height: clamp(96px, 12vw, 132px);
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: var(--color-green);
+  text-align: center;
+
+  .sticker-title {
+    padding: 0 16px;
+    font-size: clamp(11px, 1.2vw, 13px);
+    line-height: 1.05;
+  }
+}
+
+.spin {
+  position: absolute;
+  inset: 7px;
+  border-radius: 50%;
+  border: 2px dashed var(--color-ink);
+  animation: spin 26s linear infinite;
+}
+
+/* On wide plates, anchor stickers to the free band beside the viewfinder instead of the plate edges. */
+@media (min-width: 900px) {
+  .stickers {
+    --side: calc(50% - var(--viewfinder-size) / 2);
+  }
+
+  .s1,
+  .s2,
+  .s3 {
+    translate: -50% 0;
+  }
+
+  .s2,
+  .s3,
+  .s4,
+  .s5 {
+    white-space: nowrap;
+  }
+
+  .s4,
+  .s5,
+  .s6 {
+    right: auto;
+    translate: -50% 0;
+  }
+
+  .s1 {
+    top: 9%;
+    left: calc(var(--side) * 0.58);
+  }
+
+  .s2 {
+    top: 42%;
+    left: calc(var(--side) * 0.4);
+  }
+
+  .s3 {
+    bottom: 13%;
+    left: calc(var(--side) * 0.62);
+  }
+
+  .s4 {
+    top: 20%;
+    left: calc(100% - var(--side) * 0.56);
+  }
+
+  .s5 {
+    top: 52%;
+    left: calc(100% - var(--side) * 0.38);
+  }
+
+  .s6 {
+    bottom: 9%;
+    left: calc(100% - var(--side) * 0.6);
+  }
+}
+
+@media (max-width: 560px) {
+  .s2,
+  .s5,
+  .plate-hud span:last-child {
+    display: none;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,6 @@
+.agents/
+.claude/skills/
+dist/
+.angular/
+package-lock.json
+design/

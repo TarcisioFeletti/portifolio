@@ -1,0 +1,62 @@
+<footer id="contato" class="contact" aria-labelledby="contact-title">
+  <app-section-header index="05" [reel]="contact().reel" />
+  <p class="kicker">{{ contact().kicker }}</p>
+  <h2 id="contact-title" class="title">{{ contact().title }}</h2>
+
+  <dl class="channels">
+    <div>
+      <dt class="label">{{ contact().emailLabel }}</dt>
+      <dd>
+        <a
+          class="channel"
+          style="--channel-accent: var(--color-yellow)"
+          [href]="'mailto:' + profile.email"
+        >
+          {{ profile.email }}
+        </a>
+      </dd>
+    </div>
+    <div>
+      <dt class="label">{{ contact().phoneLabel }}</dt>
+      <dd>
+        <a
+          class="channel tabular"
+          style="--channel-accent: var(--color-teal)"
+          [href]="profile.phoneHref"
+        >
+          {{ profile.phoneDisplay }}
+        </a>
+      </dd>
+    </div>
+    <div>
+      <dt class="label">{{ contact().profilesLabel }}</dt>
+      <dd class="profiles">
+        <a
+          class="channel"
+          style="--channel-accent: var(--color-pink)"
+          [href]="profile.linkedin"
+          target="_blank"
+          rel="noopener noreferrer"
+          >LinkedIn ↗</a
+        >
+        <a
+          class="channel"
+          style="--channel-accent: var(--color-orange)"
+          [href]="profile.github"
+          target="_blank"
+          rel="noopener noreferrer"
+          >GitHub ↗</a
+        >
+      </dd>
+    </div>
+    <div>
+      <dt class="label">{{ contact().locationLabel }}</dt>
+      <dd class="location">{{ contact().location }}</dd>
+    </div>
+  </dl>
+
+  <div class="bottom">
+    <a class="cv" [href]="profile.cvPath" [attr.download]="profile.cvFileName">{{ ctaCv() }} ↓</a>
+    <small class="copyright">© {{ profile.year }} — {{ contact().footerRole }}</small>
+  </div>
+</footer>

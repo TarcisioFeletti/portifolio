@@ -1,0 +1,18 @@
+<nav class="nav" [attr.aria-label]="nav().ariaLabel">
+  <a class="brand" [routerLink]="homePath()" fragment="top">
+    <span class="brand-badge" aria-hidden="true">{{ profile.initials }}</span>
+    <span class="brand-name">Tarcisio<br />Feletti</span>
+  </a>
+  <div class="links">
+    @for (section of nav().sections; track section.id) {
+      <a class="link" [routerLink]="homePath()" [fragment]="section.id">{{ section.label }}</a>
+    }
+    <a
+      class="lang"
+      [routerLink]="switchPath()"
+      [attr.aria-label]="nav().switchAria"
+      [attr.hreflang]="lang() === 'pt' ? 'en' : 'pt-BR'"
+      >{{ nav().switchLabel }}</a
+    >
+  </div>
+</nav>

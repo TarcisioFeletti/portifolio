@@ -1,0 +1,55 @@
+/* Palette and type from the Claude Design "Portfolio Tarcisio v3" (design/portfolio-v3.dc.html). */
+:root {
+  --color-ink: #0c0c0c;
+  --color-ink-raised: #141312;
+  --color-paper: #efeae1;
+  --color-yellow: #f4db2e;
+  --color-teal: #3fc7b4;
+  --color-pink: #f0326b;
+  --color-orange: #f0731e;
+  --color-green: #6fe08c;
+
+  --color-text-strong: #d8d3cc;
+  --color-text-soft: #b5b0a9;
+  --color-text-dim: #a8a39c;
+  --color-text-nav: #cdc8c1;
+  --color-muted: #8a8580;
+  --color-hud-dim: #6a655f;
+  --color-paper-muted: #5c5851;
+  --color-plate-hud: #4a4640;
+
+  --color-line: #242320;
+  --color-line-strong: #45423d;
+  --color-line-faint: #1c1b19;
+  --color-grid-ink: rgb(12 12 12 / 10%);
+  --color-grid-ink-soft: rgb(12 12 12 / 7%);
+
+  --font-display: 'Anton', 'Archivo', 'Arial Narrow', sans-serif;
+  --font-sans: 'Archivo', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  --gutter: clamp(14px, 3vw, 34px);
+  --section-pad: clamp(30px, 5vw, 72px);
+  --title-size: clamp(30px, 4.6vw, 62px);
+  --radius: 6px;
+  --grid-size: 74px;
+  --gradient-chrome-plate: linear-gradient(180deg, #d9d5cf, #f6f3ee 46%, #9a948c 54%, #cfcac3);
+  --gradient-chrome-text: linear-gradient(
+    180deg,
+    #5a554e 0%,
+    #23211e 32%,
+    #f7f5f1 50%,
+    #6d675f 62%,
+    #1b1917 100%
+  );
+  --shadow-sticker: 0 6px 18px rgb(0 0 0 / 18%);
+  --nav-height: 64px;
+
+  color-scheme: dark;
+}
+
+@media (max-width: 640px) {
+  :root {
+    --nav-height: 120px;
+  }
+}

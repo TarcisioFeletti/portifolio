@@ -1,0 +1,34 @@
+<section id="experiencia" class="experience" aria-labelledby="experience-title">
+  <app-section-header index="03" [reel]="experience().reel" />
+  <h2 id="experience-title" class="section-title title">{{ experience().title }}</h2>
+
+  <ol class="jobs" role="list">
+    @for (job of experience().jobs; track job.period; let i = $index) {
+      <li class="job" [style.--job-accent]="accentFor(i) | accent">
+        <div>
+          <div class="job-meta">
+            <span class="job-num" aria-hidden="true">{{ numberFor(i) }}</span>
+            <span class="job-period">{{ job.period }}</span>
+          </div>
+          <h3 class="job-role">{{ job.role }}</h3>
+          <p class="job-org">{{ job.org }}</p>
+          <p class="job-place">{{ job.place }}</p>
+          <p class="job-stack">{{ job.stack }}</p>
+        </div>
+        <div class="job-body">
+          <p class="job-summary">{{ job.summary }}</p>
+          @if (job.highlights.length) {
+            <ul class="highlights" role="list">
+              @for (highlight of job.highlights; track $index) {
+                <li class="highlight">
+                  <span class="slash" aria-hidden="true">/</span>
+                  <p>{{ highlight }}</p>
+                </li>
+              }
+            </ul>
+          }
+        </div>
+      </li>
+    }
+  </ol>
+</section>

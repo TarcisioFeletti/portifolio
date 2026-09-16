@@ -1,0 +1,132 @@
+@use './styles/tokens.css';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--nav-height);
+  background: var(--color-ink);
+}
+
+body {
+  margin: 0;
+  overflow-x: clip;
+  background: var(--color-ink);
+  color: var(--color-paper);
+  font-family: var(--font-sans);
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: var(--color-paper);
+}
+
+a:hover {
+  color: var(--color-yellow);
+}
+
+::selection {
+  background: var(--color-pink);
+  color: var(--color-paper);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-yellow);
+  outline-offset: 3px;
+}
+
+.hud {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+.ticks {
+  height: 9px;
+  background-image: repeating-linear-gradient(90deg, currentColor 0 1px, transparent 1px 13px);
+  opacity: 0.4;
+}
+
+/* Four L-shaped corner marks drawn with gradients, so no extra DOM is needed. */
+.corners {
+  --corner-size: 18px;
+  --corner-width: 1px;
+  --corner-color: var(--color-line-strong);
+  --c: linear-gradient(var(--corner-color), var(--corner-color));
+  background:
+    var(--c) top left / var(--corner-size) var(--corner-width),
+    var(--c) top left / var(--corner-width) var(--corner-size),
+    var(--c) top right / var(--corner-size) var(--corner-width),
+    var(--c) top right / var(--corner-width) var(--corner-size),
+    var(--c) bottom left / var(--corner-size) var(--corner-width),
+    var(--c) bottom left / var(--corner-width) var(--corner-size),
+    var(--c) bottom right / var(--corner-size) var(--corner-width),
+    var(--c) bottom right / var(--corner-width) var(--corner-size);
+  background-repeat: no-repeat;
+  pointer-events: none;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: var(--title-size);
+  line-height: 0.94;
+  text-transform: uppercase;
+}
+
+.skip-link {
+  position: absolute;
+  left: var(--gutter);
+  top: -100%;
+  z-index: 100;
+  padding: 8px 14px;
+  background: var(--color-yellow);
+  color: var(--color-ink);
+  font-weight: 800;
+  border-radius: 999px;
+
+  &:focus {
+    top: 12px;
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition-duration: 0.01ms !important;
+  }
+}

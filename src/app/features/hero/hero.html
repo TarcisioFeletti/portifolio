@@ -1,0 +1,23 @@
+<header class="hero" id="top">
+  <div class="frame corners" aria-hidden="true"></div>
+  <div class="hud tags">
+    @for (tag of hud().tags; track tag) {
+      <span>{{ tag }}</span>
+    }
+    <span class="take">{{ hud().take }}</span>
+  </div>
+  <h1 class="title">
+    {{ hero().line1 }}<br /><span class="outline">{{ hero().line2 }}</span>
+  </h1>
+  <div class="intro">
+    @for (paragraph of hero().paragraphs; track $index) {
+      <p>{{ paragraph }}</p>
+    }
+    <div class="ctas">
+      <a class="cta cta-mail" [href]="'mailto:' + profile.email">{{ hero().ctaMail }} →</a>
+      <a class="cta cta-cv" [href]="profile.cvPath" [attr.download]="profile.cvFileName"
+        >{{ hero().ctaCv }} ↓</a
+      >
+    </div>
+  </div>
+</header>

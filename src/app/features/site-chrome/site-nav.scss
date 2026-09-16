@@ -1,0 +1,81 @@
+:host {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  display: block;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding: 14px var(--gutter);
+  background: rgb(12 12 12 / 92%);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--color-line);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--color-paper);
+}
+
+.brand-badge {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 26px;
+  border-radius: 999px;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-weight: 900;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+}
+
+.brand-name {
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 1.15;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: clamp(10px, 2vw, 26px);
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.link {
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--color-text-nav);
+
+  &:hover {
+    color: var(--color-yellow);
+  }
+}
+
+.lang {
+  border: 1px solid var(--color-line-strong);
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-weight: 800;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  color: var(--color-paper);
+
+  &:hover {
+    background: var(--color-yellow);
+    border-color: var(--color-yellow);
+    color: var(--color-ink);
+  }
+}
