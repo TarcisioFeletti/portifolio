@@ -1,14 +1,28 @@
+import { Accent } from './content.model';
+
+export interface SocialLink {
+  label: string;
+  url: string;
+  accent: Accent;
+}
+
+const SOCIALS: SocialLink[] = [
+  {
+    label: 'LinkedIn',
+    url: 'https://www.linkedin.com/in/tarcisio-feletti-3b9923219',
+    accent: 'pink',
+  },
+  { label: 'GitHub', url: 'https://github.com/TarcisioFeletti', accent: 'orange' },
+  { label: 'Instagram', url: 'https://www.instagram.com/felettitarcisio/', accent: 'teal' },
+];
+
 export const PROFILE = {
   name: 'Tarcisio Feletti',
   initials: 'TF',
   email: 'tarcisio.feletti@gmail.com',
-  phoneDisplay: '(28) 99934-0833',
-  phoneHref: 'tel:+5528999340833',
-  linkedin: 'https://www.linkedin.com/in/tarcisio-feletti-3b9923219',
   github: 'https://github.com/TarcisioFeletti',
   githubLabel: 'github.com/TarcisioFeletti',
-  cvPath: 'assets/tarcisio-feletti-cv.pdf',
-  cvFileName: 'Tarcisio-Feletti-CV.pdf',
+  socials: SOCIALS,
   year: 2026,
 } as const;
 

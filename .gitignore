@@ -48,3 +48,6 @@ Thumbs.db
 
 # Reference-only agents from another project (not for publication)
 /.agents/
+
+# Design reference (contains private contact details)
+/design/

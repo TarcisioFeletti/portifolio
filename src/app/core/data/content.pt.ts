@@ -37,7 +37,6 @@ export const CONTENT_PT: SiteContent = {
       'Gosto de assumir o problema inteiro — da modelagem do banco ao detalhe da tela que alguém usa todos os dias. Hoje em Muniz Freire (ES), disponível para remoto.',
     ],
     ctaMail: 'Falar comigo',
-    ctaCv: 'Baixar CV',
   },
   plate: {
     left: 'Cena 01 — retrato',
@@ -222,7 +221,6 @@ export const CONTENT_PT: SiteContent = {
     kicker: 'Contato',
     title: 'Vamos conversar',
     emailLabel: 'E-mail',
-    phoneLabel: 'Telefone',
     profilesLabel: 'Redes',
     locationLabel: 'Onde estou',
     location:

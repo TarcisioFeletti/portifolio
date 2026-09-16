@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project
 
-Tarcisio Feletti's personal portfolio: a one-page, bilingual (PT at `/`, EN at `/en/`) site. Visual source of truth: the Claude Design project "Portfolio Tarcisio v3" — a dark, cinematic "film reel" look (Anton / Archivo / JetBrains Mono). A copy of the design HTML, including the full PT/EN copy, is in `design/portfolio-v3.dc.html`. Content comes from Tarcisio's CV.
+Tarcisio Feletti's personal portfolio: a one-page, bilingual (PT at `/`, EN at `/en/`) site. Visual source of truth: the Claude Design project "Portfolio Tarcisio v3" — a dark, cinematic "film reel" look (Anton / Archivo / JetBrains Mono). A local copy of the design HTML, including the full PT/EN copy, is in `design/portfolio-v3.dc.html` (gitignored: it holds private contact details). Content comes from Tarcisio's CV.
 
 ## Current state
 
@@ -21,10 +21,10 @@ Commands: `npm start`, `npm run lint`, `npm run test:ci` (Vitest), `npm run buil
 - **i18n without a framework:**
   - Both languages share one `Portfolio` page. The route `data.lang` is bound to its `lang` input.
   - Copy lives in `core/data/content.pt.ts` and `content.en.ts`, typed by `content.model.ts`. A spec enforces that both have identical shape.
-  - Language-independent facts (email, phone, links, CV path) live in `core/data/profile.ts`.
+  - Language-independent facts (email, social links) live in `core/data/profile.ts`. The phone number and the CV download are intentionally not published for now.
 - **Hosting:** GitHub Pages, deployed by GitHub Actions on push to `main`. PRs run format check, lint, test and build only.
 - **Styling:** SCSS + CSS custom-property tokens in `src/styles/tokens.css`. Global utilities in `src/styles.scss`: `.hud`, `.ticks`, `.corners` (gradient corner marks), `.section-title`. The design is dark-only by intent, so there is no theme toggle.
-- **Assets:** `public/assets/portrait.webp` is derived from `design/portrait-body.png` (grayscale, WebP). `public/assets/tarcisio-feletti-cv.pdf` is the downloadable CV.
+- **Assets:** `public/assets/portrait.webp` is the portrait with its background (WebP, converted from the PNG export).
 - **Lint/format:** angular-eslint (with template a11y rules) + Prettier. **Tests:** Vitest via `ng test`. **Package manager:** npm.
 
 ## Layout
@@ -38,7 +38,7 @@ src/app/
   pages/         portfolio (both languages), not-found
 src/styles/tokens.css
 public/          static files copied as-is (assets/, favicon)
-design/          design reference (not built)
+design/          local design reference (gitignored, not built)
 .github/workflows/
 ```
 

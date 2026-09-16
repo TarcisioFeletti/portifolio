@@ -67,18 +67,10 @@
   text-transform: uppercase;
   color: var(--color-paper);
   text-decoration: none;
-  border-bottom: 2px solid var(--cta-accent);
+  border-bottom: 2px solid var(--color-yellow);
   padding-bottom: 3px;
 
   &:hover {
-    color: var(--cta-accent);
+    color: var(--color-yellow);
   }
-}
-
-.cta-mail {
-  --cta-accent: var(--color-yellow);
-}
-
-.cta-cv {
-  --cta-accent: var(--color-teal);
 }

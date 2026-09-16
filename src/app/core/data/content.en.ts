@@ -37,7 +37,6 @@ export const CONTENT_EN: SiteContent = {
       'I like owning the whole problem — from the data model to the detail of the screen someone uses every day. Based in Espírito Santo, Brazil, available for remote work.',
     ],
     ctaMail: 'Get in touch',
-    ctaCv: 'Download CV',
   },
   plate: {
     left: 'Scene 01 — portrait',
@@ -222,7 +221,6 @@ export const CONTENT_EN: SiteContent = {
     kicker: 'Contact',
     title: "Let's talk",
     emailLabel: 'E-mail',
-    phoneLabel: 'Phone',
     profilesLabel: 'Profiles',
     locationLabel: 'Based in',
     location:

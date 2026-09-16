@@ -44,7 +44,7 @@ src/styles/tokens.css   design tokens (cores, tipografia, espaçamento)
 scripts/postbuild.mjs   ajustes do artefato para o GitHub Pages
 ```
 
-Textos ficam em `src/app/core/data/content.pt.ts` e `content.en.ts` (mesma estrutura, garantida por teste); contato e links em `profile.ts`. O CV baixável está em `public/assets/`.
+Textos ficam em `src/app/core/data/content.pt.ts` e `content.en.ts` (mesma estrutura, garantida por teste); e-mail e redes (LinkedIn, GitHub, Instagram) em `profile.ts`.
 
 ## Fluxo com agents (Claude Code)
 

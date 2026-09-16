@@ -63,7 +63,6 @@ export interface SiteContent {
     line2: string;
     paragraphs: [string, string];
     ctaMail: string;
-    ctaCv: string;
   };
   plate: {
     left: string;
@@ -111,7 +110,6 @@ export interface SiteContent {
     kicker: string;
     title: string;
     emailLabel: string;
-    phoneLabel: string;
     profilesLabel: string;
     locationLabel: string;
     location: string;

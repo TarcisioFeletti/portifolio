@@ -14,10 +14,7 @@
       <p>{{ paragraph }}</p>
     }
     <div class="ctas">
-      <a class="cta cta-mail" [href]="'mailto:' + profile.email">{{ hero().ctaMail }} →</a>
-      <a class="cta cta-cv" [href]="profile.cvPath" [attr.download]="profile.cvFileName"
-        >{{ hero().ctaCv }} ↓</a
-      >
+      <a class="cta" [href]="'mailto:' + profile.email">{{ hero().ctaMail }} →</a>
     </div>
   </div>
 </header>
