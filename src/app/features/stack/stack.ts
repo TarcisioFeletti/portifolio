@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, computed, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { SiteContent } from '../../core/data/content.model';
 
 @Component({
@@ -9,11 +9,4 @@ import { SiteContent } from '../../core/data/content.model';
 })
 export class Stack {
   readonly stack = input.required<SiteContent['stack']>();
-
-  protected readonly chips = computed(() =>
-    this.stack().skills.map((label, i) => ({
-      label,
-      num: String(i + 1).padStart(2, '0'),
-    })),
-  );
 }

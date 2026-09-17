@@ -50,8 +50,10 @@
 
 .stat-value {
   margin: 0;
-  font-family: var(--font-display);
-  font-size: clamp(38px, 5vw, 62px);
+  color: var(--color-paper);
+  font-family: var(--font-sans);
+  font-weight: 800;
+  font-size: clamp(30px, 4vw, 44px);
   line-height: 1;
   font-variant-numeric: tabular-nums;
 }

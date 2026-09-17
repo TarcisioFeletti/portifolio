@@ -7,7 +7,7 @@ export interface Stat {
 
 export interface SkillGroup {
   title: string;
-  items: string;
+  items: string[];
 }
 
 export interface ClientWork {
@@ -57,7 +57,7 @@ export interface SiteContent {
     paragraphs: string[];
     stats: Stat[];
   };
-  stack: { title: string; note: string; skills: string[]; groups: SkillGroup[] };
+  stack: { title: string; note: string; groups: SkillGroup[] };
   experience: { title: string; clientsLabel: string; jobs: Job[] };
   openSource: { title: string; name: string; body: string; stack: string; cta: string };
   education: {

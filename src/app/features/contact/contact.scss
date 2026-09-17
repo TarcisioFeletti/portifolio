@@ -1,3 +1,7 @@
+:host {
+  display: block;
+}
+
 .contact {
   display: block;
   padding: clamp(34px, 5vw, 76px) var(--gutter) 26px;

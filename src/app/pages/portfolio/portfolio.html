@@ -3,7 +3,7 @@
 <a class="skip-link" href="#main" (click)="skipToMain($event, main)">{{ c.skipLink }}</a>
 <app-site-nav [nav]="c.nav" [lang]="c.lang" />
 
-<main #main id="main" tabindex="-1">
+<main #main id="main" tabindex="-1" class="page">
   <app-hero [hero]="c.hero" />
   <app-about [about]="c.about" />
   <app-stack [stack]="c.stack" />
@@ -12,4 +12,4 @@
   <app-education [education]="c.education" />
 </main>
 
-<app-contact [contact]="c.contact" />
+<app-contact [contact]="c.contact" class="page" />
