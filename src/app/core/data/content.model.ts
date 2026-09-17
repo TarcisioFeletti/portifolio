@@ -45,9 +45,9 @@ export interface SiteContent {
     switchAria: string;
   };
   hero: {
-    line1: string;
-    line2: string;
-    paragraphs: [string, string];
+    role: string;
+    valueProp: string;
+    portraitAlt: string;
     ctaMail: string;
   };
   about: {

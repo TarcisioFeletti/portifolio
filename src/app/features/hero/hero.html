@@ -1,14 +1,19 @@
 <header class="hero" id="top">
-  <div class="frame corners" aria-hidden="true"></div>
-  <h1 class="title">
-    {{ hero().line1 }}<br /><span class="outline">{{ hero().line2 }}</span>
-  </h1>
-  <div class="intro">
-    @for (paragraph of hero().paragraphs; track $index) {
-      <p>{{ paragraph }}</p>
+  <div class="portrait">
+    <img ngSrc="assets/portrait.webp" fill priority sizes="36vw" [alt]="hero().portraitAlt" />
+  </div>
+  <h1 class="name">{{ profile.name }}</h1>
+  <p class="role">{{ hero().role }}</p>
+  <p class="value-prop">{{ hero().valueProp }}</p>
+  <div class="ctas">
+    <a class="cta-primary" [href]="linkedin().url" target="_blank" rel="noopener noreferrer">
+      {{ linkedin().label }}
+    </a>
+    <a class="cta" [href]="'mailto:' + profile.email">{{ hero().ctaMail }}</a>
+    @for (social of otherSocials(); track social.label) {
+      <a class="cta" [href]="social.url" target="_blank" rel="noopener noreferrer">{{
+        social.label
+      }}</a>
     }
-    <div class="ctas">
-      <a class="cta" [href]="'mailto:' + profile.email">{{ hero().ctaMail }} →</a>
-    </div>
   </div>
 </header>

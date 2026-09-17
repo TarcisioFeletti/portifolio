@@ -23,12 +23,10 @@ export const CONTENT_PT: SiteContent = {
     switchAria: 'View in English',
   },
   hero: {
-    line1: 'Desenvolvedor',
-    line2: 'Full Stack',
-    paragraphs: [
-      'Construo aplicações web de ponta a ponta: Java e Spring no servidor, Angular e TypeScript na interface. Mais de quatro anos entregando sistemas para clientes corporativos.',
-      'Gosto de assumir o problema inteiro — da modelagem do banco ao detalhe da tela que alguém usa todos os dias. Hoje em Muniz Freire (ES), disponível para remoto.',
-    ],
+    role: 'Desenvolvedor Full Stack',
+    valueProp:
+      'Mais de 4 anos construindo sistemas web com Java/Spring e Angular. Disponível para remoto e presencial na Grande Vitória.',
+    portraitAlt: 'Retrato de Tarcisio Feletti',
     ctaMail: 'Falar comigo',
   },
   about: {

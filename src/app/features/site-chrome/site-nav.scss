@@ -18,30 +18,11 @@
 }
 
 .brand {
-  display: flex;
-  align-items: center;
-  gap: 12px;
   text-decoration: none;
   color: var(--color-paper);
-}
-
-.brand-badge {
-  display: grid;
-  place-items: center;
-  width: 52px;
-  height: 26px;
-  border-radius: 999px;
-  background: var(--color-paper);
-  color: var(--color-ink);
-  font-weight: 900;
-  font-size: 12px;
-  letter-spacing: 0.04em;
-}
-
-.brand-name {
   font-weight: 700;
-  font-size: 13px;
-  line-height: 1.15;
+  font-size: 14px;
+  letter-spacing: 0.01em;
 }
 
 .links {

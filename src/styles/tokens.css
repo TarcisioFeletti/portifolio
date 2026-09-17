@@ -22,7 +22,9 @@
 
   --gutter: clamp(14px, 3vw, 34px);
   --section-pad: clamp(30px, 5vw, 72px);
-  --title-size: clamp(30px, 4.6vw, 62px);
+  --content-width: 44rem;
+  --title-size: clamp(24px, 3.2vw, 36px);
+  --portrait-size: clamp(120px, 36vw, 144px);
   --radius: 6px;
   --nav-height: 64px;
 
@@ -31,6 +33,6 @@
 
 @media (max-width: 640px) {
   :root {
-    --nav-height: 120px;
+    --nav-height: 96px;
   }
 }

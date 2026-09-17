@@ -23,12 +23,10 @@ export const CONTENT_EN: SiteContent = {
     switchAria: 'Ver em português',
   },
   hero: {
-    line1: 'Full Stack',
-    line2: 'Developer',
-    paragraphs: [
-      'I build web applications end to end: Java and Spring on the server, Angular and TypeScript on the interface. Over four years delivering systems for corporate clients.',
-      'I like owning the whole problem — from the data model to the detail of the screen someone uses every day. Based in Espírito Santo, Brazil, available for remote work.',
-    ],
+    role: 'Full Stack Developer',
+    valueProp:
+      '4+ years building web systems with Java/Spring and Angular. Available for remote work and on-site in Greater Vitória.',
+    portraitAlt: 'Portrait of Tarcisio Feletti',
     ctaMail: 'Get in touch',
   },
   about: {
