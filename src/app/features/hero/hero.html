@@ -1,19 +1,36 @@
-<header class="hero" id="top">
-  <div class="portrait">
-    <img ngSrc="assets/portrait.webp" fill priority sizes="36vw" [alt]="hero().portraitAlt" />
-  </div>
-  <h1 class="name">{{ profile.name }}</h1>
-  <p class="role">{{ hero().role }}</p>
-  <p class="value-prop">{{ hero().valueProp }}</p>
-  <div class="ctas">
-    <a class="cta-primary" [href]="linkedin.url" target="_blank" rel="noopener noreferrer">
-      {{ linkedin.label }}
-    </a>
-    <a class="cta" [href]="'mailto:' + profile.email">{{ hero().ctaMail }}</a>
-    @for (social of otherSocials; track social.label) {
-      <a class="cta" [href]="social.url" target="_blank" rel="noopener noreferrer">{{
-        social.label
-      }}</a>
-    }
+<header class="container hero" id="top">
+  <div class="grid">
+    <div class="portrait">
+      <img
+        ngSrc="assets/portrait.webp"
+        width="600"
+        height="600"
+        priority
+        [alt]="hero().portraitAlt"
+      />
+    </div>
+
+    <div class="intro">
+      <p class="role">{{ hero().role }}</p>
+      <h1 class="name">{{ profile.name }}</h1>
+      <p class="value-prop">{{ hero().valueProp }}</p>
+
+      <div class="ctas">
+        <a class="cta-primary" [href]="'mailto:' + profile.email">{{ hero().ctaMail }}</a>
+        @for (social of profile.socials; track social.url) {
+          <a class="cta" [href]="social.url" target="_blank" rel="noopener noreferrer">{{
+            social.label
+          }}</a>
+        }
+      </div>
+
+      <ul class="highlights">
+        @for (item of hero().highlights; track $index) {
+          <li>
+            <span class="highlight-value">{{ item.value }}</span> {{ item.label }}
+          </li>
+        }
+      </ul>
+    </div>
   </div>
 </header>

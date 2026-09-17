@@ -3,12 +3,16 @@ import { SiteContent } from '../../core/data/content.model';
 import { SectionHeading } from '../../shared/ui/section-heading';
 
 @Component({
-  selector: 'app-experience',
+  selector: 'app-projects',
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [SectionHeading],
-  templateUrl: './experience.html',
-  styleUrl: './experience.scss',
+  templateUrl: './projects.html',
+  styleUrl: './projects.scss',
 })
-export class Experience {
-  readonly experience = input.required<SiteContent['experience']>();
+export class Projects {
+  readonly projects = input.required<SiteContent['projects']>();
+
+  protected number(index: number): string {
+    return String(index + 1).padStart(2, '0');
+  }
 }

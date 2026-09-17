@@ -9,40 +9,51 @@ describe('SiteNav', () => {
     TestBed.configureTestingModule({ providers: [provideRouter([])] });
   });
 
-  it.each(['pt', 'en'] as const)('renders the brand and section links for %s', async (lang) => {
-    const fixture = TestBed.createComponent(SiteNav);
-    fixture.componentRef.setInput('nav', CONTENT[lang].nav);
-    fixture.componentRef.setInput('lang', lang);
-    await fixture.whenStable();
-    const el: HTMLElement = fixture.nativeElement;
+  it.each(['pt', 'en'] as const)(
+    'renders the brand, six section links and the switch for %s',
+    async (lang) => {
+      const fixture = TestBed.createComponent(SiteNav);
+      fixture.componentRef.setInput('nav', CONTENT[lang].nav);
+      fixture.componentRef.setInput('lang', lang);
+      await fixture.whenStable();
+      const el: HTMLElement = fixture.nativeElement;
 
-    expect(el.querySelector('.brand')?.textContent?.trim()).toBe(PROFILE.name);
-    expect(el.querySelector('.brand-badge')).toBeNull();
+      expect(el.querySelector('.brand')?.textContent).toContain(PROFILE.name);
 
-    const links = Array.from(el.querySelectorAll('.link'));
-    expect(links.length).toBe(4);
-    expect(links.map((link) => link.getAttribute('href')?.split('#').at(-1))).toEqual([
-      'sobre',
-      'stack',
-      'experiencia',
-      'contato',
-    ]);
+      const links = Array.from(el.querySelectorAll('.link'));
+      expect(links.map((link) => link.getAttribute('href')?.split('#').at(-1))).toEqual([
+        'sobre',
+        'stack',
+        'carreira',
+        'projetos',
+        'formacao',
+        'contato',
+      ]);
 
-    expect(el.querySelector('.lang')?.textContent?.trim()).toBe(CONTENT[lang].nav.switchLabel);
-  });
+      expect(el.querySelector('.lang')?.textContent?.trim()).toBe(CONTENT[lang].nav.switchLabel);
+    },
+  );
 
-  it('keeps brand before lang switch before the first section link in DOM order', async () => {
+  it('toggles the mobile menu and closes it after choosing a section', async () => {
     const fixture = TestBed.createComponent(SiteNav);
     fixture.componentRef.setInput('nav', CONTENT.pt.nav);
     fixture.componentRef.setInput('lang', 'pt');
     await fixture.whenStable();
     const el: HTMLElement = fixture.nativeElement;
+    const toggle = el.querySelector('button.toggle') as HTMLButtonElement;
+    const links = el.querySelector('#nav-links') as HTMLElement;
 
-    const brand = el.querySelector('.brand') as Node;
-    const lang = el.querySelector('.lang') as Node;
-    const firstLink = el.querySelector('.link') as Node;
+    expect(toggle.getAttribute('aria-expanded')).toBe('false');
+    expect(toggle.getAttribute('aria-controls')).toBe('nav-links');
 
-    expect(brand.compareDocumentPosition(lang) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
-    expect(lang.compareDocumentPosition(firstLink) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+    toggle.click();
+    await fixture.whenStable();
+    expect(toggle.getAttribute('aria-expanded')).toBe('true');
+    expect(links.classList).toContain('open');
+
+    (el.querySelector('.link') as HTMLAnchorElement).click();
+    await fixture.whenStable();
+    expect(toggle.getAttribute('aria-expanded')).toBe('false');
+    expect(links.classList).not.toContain('open');
   });
 });

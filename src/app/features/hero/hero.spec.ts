@@ -5,22 +5,24 @@ import { Hero } from './hero';
 
 describe('Hero', () => {
   it.each(['pt', 'en'] as const)(
-    'renders the name, role, value prop and alt for %s',
+    'renders name, role, value prop and highlights for %s',
     async (lang) => {
       const fixture = TestBed.createComponent(Hero);
       fixture.componentRef.setInput('hero', CONTENT[lang].hero);
       await fixture.whenStable();
       const el: HTMLElement = fixture.nativeElement;
+      const hero = CONTENT[lang].hero;
 
       expect(el.querySelector('h1')?.textContent).toContain(PROFILE.name);
-      expect(el.querySelector('.role')?.textContent).toContain(CONTENT[lang].hero.role);
-      expect(el.querySelector('.value-prop')?.textContent).toContain(CONTENT[lang].hero.valueProp);
-      expect(el.querySelector('img')?.getAttribute('alt')).toBe(CONTENT[lang].hero.portraitAlt);
+      expect(el.querySelector('.role')?.textContent).toContain(hero.role);
+      expect(el.querySelector('.value-prop')?.textContent).toContain(hero.valueProp);
+      expect(el.querySelector('img')?.getAttribute('alt')).toBe(hero.portraitAlt);
+      expect(el.querySelectorAll('.highlights li').length).toBe(hero.highlights.length);
     },
   );
 
   it.each(['pt', 'en'] as const)(
-    'renders exactly one primary CTA linking to LinkedIn, then mail, then GitHub for %s',
+    'puts the mail CTA first, then LinkedIn and GitHub for %s',
     async (lang) => {
       const fixture = TestBed.createComponent(Hero);
       fixture.componentRef.setInput('hero', CONTENT[lang].hero);
@@ -29,12 +31,12 @@ describe('Hero', () => {
 
       const primaries = el.querySelectorAll('.cta-primary');
       expect(primaries.length).toBe(1);
-      expect(primaries[0]?.getAttribute('href')).toBe(PROFILE.socials[0].url);
+      expect(primaries[0]?.textContent?.trim()).toBe(CONTENT[lang].hero.ctaMail);
 
-      const hrefs = Array.from(el.querySelectorAll('a')).map((a) => a.getAttribute('href'));
+      const hrefs = Array.from(el.querySelectorAll('.ctas a')).map((a) => a.getAttribute('href'));
       expect(hrefs).toEqual([
-        PROFILE.socials[0].url,
         `mailto:${PROFILE.email}`,
+        PROFILE.socials[0].url,
         PROFILE.socials[1].url,
       ]);
     },

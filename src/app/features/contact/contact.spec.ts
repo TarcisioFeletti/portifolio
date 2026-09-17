@@ -5,7 +5,7 @@ import { Contact } from './contact';
 
 describe('Contact', () => {
   it.each(['pt', 'en'] as const)(
-    'renders e-mail, socials, location and copyright for %s',
+    'renders e-mail, socials, location, copyright and source link for %s',
     async (lang) => {
       const fixture = TestBed.createComponent(Contact);
       fixture.componentRef.setInput('contact', CONTENT[lang].contact);
@@ -13,15 +13,16 @@ describe('Contact', () => {
       const el: HTMLElement = fixture.nativeElement;
 
       const hrefs = Array.from(el.querySelectorAll('a')).map((a) => a.getAttribute('href'));
-      expect(hrefs).toContain(`mailto:${PROFILE.email}`);
-      expect(hrefs).toContain(PROFILE.socials[0].url);
-      expect(hrefs).toContain(PROFILE.socials[1].url);
-      expect(hrefs.some((href) => href?.startsWith('tel:'))).toBe(false);
+      expect(hrefs).toEqual([
+        `mailto:${PROFILE.email}`,
+        PROFILE.socials[0].url,
+        PROFILE.socials[1].url,
+        PROFILE.repo,
+      ]);
       expect(el.querySelector('a[download]')).toBeNull();
-      expect(hrefs.some((href) => href?.includes('.pdf'))).toBe(false);
 
       expect(el.textContent).toContain(CONTENT[lang].contact.location);
-      expect(el.textContent).toContain(String(PROFILE.year));
+      expect(el.querySelector('.copyright')?.textContent).toContain(String(PROFILE.year));
     },
   );
 });

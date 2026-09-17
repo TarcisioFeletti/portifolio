@@ -1,60 +1,122 @@
-.education {
+:host {
+  display: block;
+}
+
+.stack {
   display: flex;
   flex-direction: column;
-  gap: clamp(20px, 3vw, 32px);
-  padding-block: var(--section-pad);
-  border-top: 1px solid var(--color-line);
+  gap: 14px;
+  margin-top: clamp(26px, 4vw, 44px);
 }
 
-.body {
-  min-width: 0;
+.degree {
+  padding: clamp(26px, 3.4vw, 44px);
+  background: var(--color-surface);
+  border: 1px solid var(--color-line-card);
+  border-radius: 20px;
 }
 
-.course-main {
-  margin-bottom: 6px;
-  font-size: 20px;
+.degree-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 12px 18px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+.degree-label {
   font-weight: 800;
-  color: var(--color-paper);
+  letter-spacing: 0.18em;
+  color: var(--color-accent);
 }
 
-.course-main-meta {
-  margin-bottom: 16px;
-  font-size: 13px;
+.degree-period {
+  letter-spacing: 0.14em;
   color: var(--color-muted);
   font-variant-numeric: tabular-nums;
 }
 
-.course-secondary {
-  margin-bottom: 20px;
-  font-size: 13px;
-  color: var(--color-text-dim);
-  font-variant-numeric: tabular-nums;
+.degree-course {
+  max-width: 22ch;
+  margin-top: 16px;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(28px, 3.6vw, 46px);
+  line-height: 1.04;
+  text-transform: uppercase;
+  color: var(--color-text-strong);
 }
 
-.certs-kicker {
-  margin-bottom: 10px;
-}
-
-.certs {
-  margin: 0 0 24px;
-  font-size: 14px;
-  color: var(--color-text-dim);
+.degree-school {
+  margin-top: 14px;
+  font-size: clamp(15px, 1.5vw, 18px);
+  font-weight: 600;
+  color: var(--color-text-body);
 }
 
 .research {
-  border-radius: var(--radius);
-  padding: clamp(18px, 2.4vw, 26px);
-  background: var(--color-ink-raised);
-  border-left: 4px solid var(--color-line-strong);
+  margin-top: clamp(22px, 3vw, 32px);
+  padding-top: clamp(20px, 2.6vw, 28px);
+  border-top: 1px solid var(--color-line-card);
+}
 
-  .eyebrow {
-    margin-bottom: 10px;
-  }
+.research-kicker {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-highlight);
+}
 
-  small {
-    display: block;
-    font-size: 13px;
-    line-height: 1.7;
-    color: var(--color-text-dim);
+.research-body {
+  margin-top: 12px;
+  font-size: 15px;
+  line-height: 1.72;
+  color: var(--color-text-soft);
+  text-wrap: pretty;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+.card {
+  padding: clamp(18px, 2.2vw, 24px);
+  background: var(--color-surface-soft);
+  border: 1px solid var(--color-line);
+  border-radius: 14px;
+}
+
+.card-course {
+  margin-top: 10px;
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--color-text-body);
+}
+
+.card-period {
+  margin-top: 4px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--color-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.certs {
+  margin-top: 10px;
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  line-height: 1.7;
+  color: var(--color-text-soft);
+}
+
+@media (min-width: 760px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }

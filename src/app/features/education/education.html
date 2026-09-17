@@ -1,29 +1,45 @@
-<section id="formacao" class="education" aria-labelledby="education-title">
-  <div>
-    <p class="eyebrow">{{ education().kicker }}</p>
-    <h2 id="education-title" class="section-title">{{ education().title }}</h2>
-  </div>
+@let e = education();
 
-  <div class="body">
-    @for (item of education().items; track item.course; let first = $first) {
-      @if (first) {
-        <h3 class="course-main">{{ item.course }}</h3>
-        <p class="course-main-meta">{{ item.school }} · {{ item.period }}</p>
-      } @else {
-        <p class="course-secondary">{{ item.course }} — {{ item.school }} · {{ item.period }}</p>
+<section id="formacao" class="container section divided" aria-labelledby="education-title">
+  <app-section-heading
+    [index]="5"
+    [kicker]="e.kicker"
+    [title]="e.title"
+    titleId="education-title"
+  />
+
+  <div class="stack">
+    <div class="degree">
+      <p class="degree-meta">
+        <span class="degree-label">{{ e.degree.label }}</span>
+        <span class="degree-period">{{ e.degree.period }}</span>
+      </p>
+      <h3 class="degree-course">{{ e.degree.course }}</h3>
+      <p class="degree-school">{{ e.degree.school }}</p>
+
+      <div class="research">
+        <p class="research-kicker">{{ e.research.kicker }}</p>
+        <p class="research-body">{{ e.research.body }}</p>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <p class="label">{{ e.technical.label }}</p>
+        <p class="card-course">{{ e.technical.course }}</p>
+        <p class="card-period">{{ e.technical.period }}</p>
+      </div>
+
+      @if (e.certs.length) {
+        <div class="card">
+          <p class="label">{{ e.certKicker }}</p>
+          <p class="certs">
+            @for (cert of e.certs; track cert; let last = $last) {
+              {{ cert }}{{ last ? '' : ' · ' }}
+            }
+          </p>
+        </div>
       }
-    }
-
-    <p class="eyebrow certs-kicker">{{ education().certKicker }}</p>
-    <p class="certs">
-      @for (cert of education().certs; track cert; let last = $last) {
-        {{ cert }}{{ last ? '' : ' · ' }}
-      }
-    </p>
-
-    <div class="research">
-      <p class="eyebrow">{{ education().research.kicker }}</p>
-      <small>{{ education().research.body }}</small>
     </div>
   </div>
 </section>

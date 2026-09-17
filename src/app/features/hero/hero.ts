@@ -14,6 +14,4 @@ export class Hero {
   readonly hero = input.required<SiteContent['hero']>();
 
   protected readonly profile = PROFILE;
-  protected readonly linkedin = this.profile.socials[0];
-  protected readonly otherSocials = this.profile.socials.slice(1);
 }

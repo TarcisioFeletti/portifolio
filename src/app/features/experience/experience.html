@@ -1,28 +1,35 @@
-<section id="experiencia" class="experience" aria-labelledby="experience-title">
-  <h2 id="experience-title" class="section-title title">{{ experience().title }}</h2>
+<section id="carreira" class="container section divided" aria-labelledby="experience-title">
+  <app-section-heading
+    [index]="3"
+    [kicker]="experience().kicker"
+    [title]="experience().title"
+    titleId="experience-title"
+  />
 
   <ol class="jobs" role="list">
     @for (job of experience().jobs; track $index) {
       <li class="job">
         <div class="job-head">
-          <h3 class="job-role">{{ job.role }}</h3>
-          <span class="job-period">{{ job.period }}</span>
-          <p class="job-org">{{ job.org }}</p>
-          <p class="job-place">{{ job.place }}</p>
-          <p class="job-stack">{{ job.stack }}</p>
+          <span class="job-initial" aria-hidden="true">{{ job.org.charAt(0) }}</span>
+          <div>
+            <p class="job-period">{{ job.period }}</p>
+            <h3 class="job-role">{{ job.role }}</h3>
+            <p class="job-org">&#64;{{ job.org }}</p>
+            <p class="job-place">{{ job.place }}</p>
+          </div>
         </div>
+
         <div class="job-body">
           <p class="job-summary">{{ job.summary }}</p>
-          @if (job.clients.length) {
-            <ul class="clients" role="list" [attr.aria-label]="experience().clientsLabel">
-              @for (client of job.clients; track $index) {
-                <li class="client">
-                  <p class="client-sector eyebrow">{{ client.sector }}</p>
-                  <h4 class="client-name">{{ client.name }}</h4>
-                  <p class="client-product">{{ client.product }}</p>
-                  <p class="client-role">{{ client.role }}</p>
-                  <p class="client-stack">{{ client.stack }}</p>
-                </li>
+          <ul class="tags job-tech" role="list">
+            @for (tech of job.tech; track tech) {
+              <li class="tag">{{ tech }}</li>
+            }
+          </ul>
+          @if (job.highlights.length) {
+            <ul class="job-highlights" role="list">
+              @for (highlight of job.highlights; track $index) {
+                <li>{{ highlight }}</li>
               }
             </ul>
           }

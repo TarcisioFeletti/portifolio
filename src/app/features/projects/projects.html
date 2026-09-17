@@ -1,0 +1,31 @@
+<section id="projetos" class="container section divided" aria-labelledby="projects-title">
+  <app-section-heading
+    [index]="4"
+    [kicker]="projects().kicker"
+    [title]="projects().title"
+    titleId="projects-title"
+  />
+
+  <div class="grid">
+    @for (project of projects().items; track project.name; let i = $index) {
+      <article class="project" [class.wide]="i < 2">
+        <p class="project-meta">
+          <span class="project-number">{{ number(i) }}</span>
+          <span>{{ project.meta }}</span>
+        </p>
+        <h3 class="project-name">{{ project.name }}</h3>
+        <p class="project-body">{{ project.body }}</p>
+        <ul class="tags project-tech" role="list">
+          @for (tech of project.tech; track tech) {
+            <li class="tag">{{ tech }}</li>
+          }
+        </ul>
+        @if (project.link) {
+          <a class="project-link" [href]="project.link" target="_blank" rel="noopener noreferrer"
+            >{{ projects().linkLabel }} <span aria-hidden="true">↗</span></a
+          >
+        }
+      </article>
+    }
+  </div>
+</section>
