@@ -22,13 +22,6 @@ export const CONTENT_EN: SiteContent = {
     switchLabel: 'PT',
     switchAria: 'Ver em português',
   },
-  hud: {
-    rec: 'Rec · open to opportunities',
-    frame: 'Portfolio · Tarcisio Feletti',
-    meta: 'Espírito Santo, BR · 2026',
-    tags: ['Exp 04+ years', 'Stack java/spring · angular', 'Remote mode'],
-    take: 'Take 01',
-  },
   hero: {
     line1: 'Full Stack',
     line2: 'Developer',
@@ -38,36 +31,7 @@ export const CONTENT_EN: SiteContent = {
     ],
     ctaMail: 'Get in touch',
   },
-  plate: {
-    left: 'Scene 01 — portrait',
-    right: 'Iso 400 · f/2.8 · 1/250',
-    focus: '▲ focus locked',
-    portraitAlt: 'Black and white portrait of Tarcisio Feletti',
-    stickers: [
-      { title: 'Back + front', subtitle: 'In one delivery' },
-      { title: 'Angular', subtitle: 'TypeScript' },
-      { title: 'Java & Spring', subtitle: 'REST APIs' },
-      { title: 'Front-end lead', subtitle: 'Technical decisions' },
-      { title: 'SQL & Data', subtitle: 'JPA · Hibernate' },
-      { title: 'Docker · AWS' },
-    ],
-  },
-  strip: {
-    logoLabel: 'Logotype',
-    logoSub: 'Tarcisio Feletti · dev 2026',
-    readouts: [
-      { label: 'Back end', value: 'Java · Spring' },
-      { label: 'Front end', value: 'Angular · TS' },
-      { label: 'Data', value: 'SQL · JPA' },
-      { label: 'Education', value: 'UFES · IS' },
-    ],
-    modeLabel: 'Recording mode',
-    modeTags: ['Java', 'Spring', 'Angular', 'SQL'],
-    modeFooter: ['End-to-end delivery', '25 fps'],
-  },
   about: {
-    reel: 'Reel 01 — who I am',
-    marquee: 'about me · about me · about me · about me · ',
     kicker: 'About me',
     title: 'Technical ownership, back to front',
     paragraphs: [
@@ -81,7 +45,6 @@ export const CONTENT_EN: SiteContent = {
     ],
   },
   stack: {
-    reel: 'Reel 02 — tooling',
     title: 'Stack & skills',
     note: 'The tools I work with daily, roughly in order of closeness.',
     skills: [
@@ -118,7 +81,6 @@ export const CONTENT_EN: SiteContent = {
     ],
   },
   experience: {
-    reel: 'Reel 03 — track record',
     title: 'Experience',
     jobs: [
       {
@@ -160,7 +122,6 @@ export const CONTENT_EN: SiteContent = {
     ],
   },
   projects: {
-    reel: 'Reel 04 — deliveries',
     title: 'Selected work',
     note: 'Systems for corporate clients. Code and screens are not public.',
     cta: 'Visit my GitHub',
@@ -215,7 +176,6 @@ export const CONTENT_EN: SiteContent = {
     },
   },
   contact: {
-    reel: 'End of reel — contact',
     kicker: 'Contact',
     title: "Let's talk",
     emailLabel: 'E-mail',

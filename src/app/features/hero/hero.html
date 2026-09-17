@@ -1,11 +1,5 @@
 <header class="hero" id="top">
   <div class="frame corners" aria-hidden="true"></div>
-  <div class="hud tags">
-    @for (tag of hud().tags; track tag) {
-      <span>{{ tag }}</span>
-    }
-    <span class="take">{{ hud().take }}</span>
-  </div>
   <h1 class="title">
     {{ hero().line1 }}<br /><span class="outline">{{ hero().line2 }}</span>
   </h1>

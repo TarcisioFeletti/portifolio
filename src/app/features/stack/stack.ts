@@ -1,7 +1,6 @@
 import { ChangeDetectionStrategy, Component, computed, input } from '@angular/core';
 import { Accent, SiteContent } from '../../core/data/content.model';
 import { AccentPipe } from '../../shared/ui/accent.pipe';
-import { SectionHeader } from '../../shared/ui/section-header/section-header';
 
 const CHIP_ACCENTS: Accent[] = [
   'yellow',
@@ -22,7 +21,7 @@ const CHIP_ROTATIONS = [-2, 1.5, -1, 2, -1.5, 1, -2.5, 1, 2, -1, 1.5, -2];
 @Component({
   selector: 'app-stack',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [SectionHeader, AccentPipe],
+  imports: [AccentPipe],
   templateUrl: './stack.html',
   styleUrl: './stack.scss',
 })

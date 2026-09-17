@@ -6,28 +6,15 @@ import { About } from '../../features/about';
 import { Contact } from '../../features/contact';
 import { Education } from '../../features/education';
 import { Experience } from '../../features/experience';
-import { Hero, PortraitPlate, ReadoutStrip } from '../../features/hero';
+import { Hero } from '../../features/hero';
 import { Projects } from '../../features/projects';
-import { FilmOverlay, SiteNav, TopHud } from '../../features/site-chrome';
+import { SiteNav } from '../../features/site-chrome';
 import { Stack } from '../../features/stack';
 
 @Component({
   selector: 'app-portfolio',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [
-    FilmOverlay,
-    TopHud,
-    SiteNav,
-    Hero,
-    PortraitPlate,
-    ReadoutStrip,
-    About,
-    Stack,
-    Experience,
-    Projects,
-    Education,
-    Contact,
-  ],
+  imports: [SiteNav, Hero, About, Stack, Experience, Projects, Education, Contact],
   templateUrl: './portfolio.html',
 })
 export default class Portfolio {

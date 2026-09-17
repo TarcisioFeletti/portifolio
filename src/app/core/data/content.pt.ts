@@ -22,13 +22,6 @@ export const CONTENT_PT: SiteContent = {
     switchLabel: 'EN',
     switchAria: 'View in English',
   },
-  hud: {
-    rec: 'Rec · disponível para propostas',
-    frame: 'Portfólio · Tarcisio Feletti',
-    meta: 'Muniz Freire — ES, BR · 2026',
-    tags: ['Exp 04+ anos', 'Stack java/spring · angular', 'Modo remoto'],
-    take: 'Take 01',
-  },
   hero: {
     line1: 'Desenvolvedor',
     line2: 'Full Stack',
@@ -38,36 +31,7 @@ export const CONTENT_PT: SiteContent = {
     ],
     ctaMail: 'Falar comigo',
   },
-  plate: {
-    left: 'Cena 01 — retrato',
-    right: 'Iso 400 · f/2.8 · 1/250',
-    focus: '▲ foco travado',
-    portraitAlt: 'Retrato de Tarcisio Feletti em preto e branco',
-    stickers: [
-      { title: 'Back + front', subtitle: 'Na mesma entrega' },
-      { title: 'Angular', subtitle: 'TypeScript' },
-      { title: 'Java & Spring', subtitle: 'API REST' },
-      { title: 'Front-end lead', subtitle: 'Decisões técnicas' },
-      { title: 'SQL & Dados', subtitle: 'JPA · Hibernate' },
-      { title: 'Docker · AWS' },
-    ],
-  },
-  strip: {
-    logoLabel: 'Logotipo',
-    logoSub: 'Tarcisio Feletti · dev 2026',
-    readouts: [
-      { label: 'Back-end', value: 'Java · Spring' },
-      { label: 'Front-end', value: 'Angular · TS' },
-      { label: 'Dados', value: 'SQL · JPA' },
-      { label: 'Formação', value: 'UFES · SI' },
-    ],
-    modeLabel: 'Modo de gravação',
-    modeTags: ['Java', 'Spring', 'Angular', 'SQL'],
-    modeFooter: ['Entrega ponta a ponta', '25 fps'],
-  },
   about: {
-    reel: 'Rolo 01 — quem eu sou',
-    marquee: 'sobre mim · sobre mim · sobre mim · sobre mim · ',
     kicker: 'Sobre mim',
     title: 'Autonomia técnica, do back ao front',
     paragraphs: [
@@ -81,7 +45,6 @@ export const CONTENT_PT: SiteContent = {
     ],
   },
   stack: {
-    reel: 'Rolo 02 — ferramentas',
     title: 'Stack & competências',
     note: 'As ferramentas que uso no dia a dia, em ordem de proximidade.',
     skills: [
@@ -118,7 +81,6 @@ export const CONTENT_PT: SiteContent = {
     ],
   },
   experience: {
-    reel: 'Rolo 03 — trajetória',
     title: 'Experiência',
     jobs: [
       {
@@ -160,7 +122,6 @@ export const CONTENT_PT: SiteContent = {
     ],
   },
   projects: {
-    reel: 'Rolo 04 — entregas',
     title: 'Projetos em destaque',
     note: 'Sistemas de clientes corporativos. Código e telas não são públicos.',
     cta: 'Ver meu GitHub',
@@ -215,7 +176,6 @@ export const CONTENT_PT: SiteContent = {
     },
   },
   contact: {
-    reel: 'Fim do rolo — contato',
     kicker: 'Contato',
     title: 'Vamos conversar',
     emailLabel: 'E-mail',

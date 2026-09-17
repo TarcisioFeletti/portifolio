@@ -8,18 +8,6 @@
   inset: clamp(14px, 3vw, 26px);
 }
 
-.tags {
-  position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px 22px;
-  margin-bottom: clamp(16px, 2.6vw, 26px);
-}
-
-.take {
-  color: var(--color-yellow);
-}
-
 .title {
   position: relative;
   font-family: var(--font-display);

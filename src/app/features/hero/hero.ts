@@ -10,7 +10,6 @@ import { PROFILE } from '../../core/data/profile';
 })
 export class Hero {
   readonly hero = input.required<SiteContent['hero']>();
-  readonly hud = input.required<SiteContent['hud']>();
 
   protected readonly profile = PROFILE;
 }

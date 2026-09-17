@@ -1,14 +1,13 @@
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { Accent, SiteContent } from '../../core/data/content.model';
 import { AccentPipe } from '../../shared/ui/accent.pipe';
-import { SectionHeader } from '../../shared/ui/section-header/section-header';
 
 const JOB_ACCENTS: Accent[] = ['yellow', 'teal', 'orange'];
 
 @Component({
   selector: 'app-experience',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [SectionHeader, AccentPipe],
+  imports: [AccentPipe],
   templateUrl: './experience.html',
   styleUrl: './experience.scss',
 })

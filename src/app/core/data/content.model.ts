@@ -2,16 +2,6 @@ export type Lang = 'pt' | 'en';
 
 export type Accent = 'yellow' | 'teal' | 'pink' | 'orange' | 'green' | 'paper';
 
-export interface LabelValue {
-  label: string;
-  value: string;
-}
-
-export interface Sticker {
-  title: string;
-  subtitle?: string;
-}
-
 export interface Stat {
   value: string;
   label: string;
@@ -57,40 +47,21 @@ export interface SiteContent {
     switchLabel: string;
     switchAria: string;
   };
-  hud: { rec: string; frame: string; meta: string; tags: string[]; take: string };
   hero: {
     line1: string;
     line2: string;
     paragraphs: [string, string];
     ctaMail: string;
   };
-  plate: {
-    left: string;
-    right: string;
-    focus: string;
-    portraitAlt: string;
-    stickers: [Sticker, Sticker, Sticker, Sticker, Sticker, Sticker];
-  };
-  strip: {
-    logoLabel: string;
-    logoSub: string;
-    readouts: LabelValue[];
-    modeLabel: string;
-    modeTags: string[];
-    modeFooter: [string, string];
-  };
   about: {
-    reel: string;
-    marquee: string;
     kicker: string;
     title: string;
     paragraphs: string[];
     stats: Stat[];
   };
-  stack: { reel: string; title: string; note: string; skills: string[]; groups: SkillGroup[] };
-  experience: { reel: string; title: string; jobs: Job[] };
+  stack: { title: string; note: string; skills: string[]; groups: SkillGroup[] };
+  experience: { title: string; jobs: Job[] };
   projects: {
-    reel: string;
     title: string;
     note: string;
     cta: string;
@@ -106,7 +77,6 @@ export interface SiteContent {
     research: { kicker: string; body: string };
   };
   contact: {
-    reel: string;
     kicker: string;
     title: string;
     emailLabel: string;
