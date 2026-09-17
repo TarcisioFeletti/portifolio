@@ -13,7 +13,6 @@ const SOCIALS: SocialLink[] = [
     accent: 'pink',
   },
   { label: 'GitHub', url: 'https://github.com/TarcisioFeletti', accent: 'orange' },
-  { label: 'Instagram', url: 'https://www.instagram.com/felettitarcisio/', accent: 'teal' },
 ];
 
 export const PROFILE = {

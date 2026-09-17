@@ -24,7 +24,7 @@ export const CONTENT_EN: SiteContent = {
   },
   hud: {
     rec: 'Rec · open to opportunities',
-    frame: 'Portfolio · Full Stack Developer',
+    frame: 'Portfolio · Tarcisio Feletti',
     meta: 'Espírito Santo, BR · 2026',
     tags: ['Exp 04+ years', 'Stack java/spring · angular', 'Remote mode'],
     take: 'Take 01',
@@ -41,15 +41,15 @@ export const CONTENT_EN: SiteContent = {
   plate: {
     left: 'Scene 01 — portrait',
     right: 'Iso 400 · f/2.8 · 1/250',
-    focus: '▲ focus locked — full stack',
+    focus: '▲ focus locked',
     portraitAlt: 'Black and white portrait of Tarcisio Feletti',
     stickers: [
-      { title: 'Full Stack', subtitle: 'Back end + front end in one delivery' },
+      { title: 'Back + front', subtitle: 'In one delivery' },
       { title: 'Angular', subtitle: 'TypeScript' },
       { title: 'Java & Spring', subtitle: 'REST APIs' },
       { title: 'Front-end lead', subtitle: 'Technical decisions' },
-      { title: 'SQL & Data', subtitle: "©'26" },
-      { title: 'AI-assisted dev' },
+      { title: 'SQL & Data', subtitle: 'JPA · Hibernate' },
+      { title: 'Docker · AWS' },
     ],
   },
   strip: {
@@ -62,7 +62,7 @@ export const CONTENT_EN: SiteContent = {
       { label: 'Education', value: 'UFES · IS' },
     ],
     modeLabel: 'Recording mode',
-    modeTags: ['Full Stack', 'Angular', 'Spring', 'SQL'],
+    modeTags: ['Java', 'Spring', 'Angular', 'SQL'],
     modeFooter: ['End-to-end delivery', '25 fps'],
   },
   about: {
@@ -71,15 +71,13 @@ export const CONTENT_EN: SiteContent = {
     kicker: 'About me',
     title: 'Technical ownership, back to front',
     paragraphs: [
-      "I'm a full stack developer with over four years of experience. I work mainly with Java and Spring on the back end and Angular with TypeScript on the front end, delivering complete systems for clients in very different industries — healthcare, steel, HR and legal.",
       "Over my career I've taken on increasing autonomy: I've been the lead front-end developer on a product, made architecture decisions, and run releases and deliveries. At one project stage I was the only developer, answering for everything from database to deploy.",
-      'I also fold AI-assisted development into my workflow to gain productivity without giving up code quality. I hold a degree in Information Systems from UFES, with a solid foundation in software architecture, databases and programming logic.',
+      'On the back end, I build REST APIs in Spring Boot with tests from the start (TDD) and clean code. I have also set up CI/CD pipelines and used Docker and AWS in deliveries.',
     ],
     stats: [
       { value: '+4', label: 'years building web applications', accent: 'teal' },
       { value: '04', label: 'industries: healthcare, steel, HR, legal', accent: 'yellow' },
-      { value: '06', label: 'products delivered for corporate clients', accent: 'orange' },
-      { value: '02', label: 'certifications (AWS and Cisco)', accent: 'pink' },
+      { value: '04', label: 'systems delivered for corporate clients', accent: 'orange' },
     ],
   },
   stack: {
@@ -94,27 +92,27 @@ export const CONTENT_EN: SiteContent = {
       'SQL',
       'Hibernate / JPA',
       'REST API',
+      'TDD',
+      'Docker',
+      'CI/CD',
+      'AWS',
       'Git',
-      'Angular Material',
-      'Spring Data',
-      'POO / OOP',
-      'AI-assisted dev',
     ],
     groups: [
       {
         title: 'Back end',
         items:
-          'Java, Spring Framework, Spring Boot, Spring MVC, Spring Data, Hibernate, JPA, REST APIs, OOP',
+          'Java, Spring Framework, Spring Boot, Spring MVC, Spring Data, Hibernate, JPA, REST APIs, TDD, OOP',
       },
       {
         title: 'Front end',
         items: 'Angular, TypeScript, JavaScript, HTML5, CSS, Angular Material',
       },
       { title: 'Data', items: 'SQL, data modelling' },
+      { title: 'Infra & delivery', items: 'Docker, CI/CD (pipelines), AWS' },
       {
         title: 'Tools & practices',
-        items:
-          'Git, GitHub, AI-assisted development, agile methodologies, problem analysis and solving',
+        items: 'Git, GitHub, clean code, automated testing, agile methodologies',
       },
       { title: 'Languages', items: 'English (advanced), Portuguese (native)' },
     ],
@@ -130,10 +128,10 @@ export const CONTENT_EN: SiteContent = {
         period: '05/2024 — 09/2026',
         stack: 'Java · Spring · Angular · TypeScript · SQL',
         summary:
-          'Full stack work on systems for corporate clients, with technical ownership of the front end on the products I worked on.',
+          'Systems for corporate clients, with technical ownership of the front end and back-end work in Java and Spring Boot.',
         highlights: [
           'ArcelorMittal — migrated a legacy internal WPF (.NET) system to a modern Angular web application, using AI-assisted development to speed up modernisation while keeping code quality.',
-          'WeDo / Comunify — lead front-end developer (Angular) on an HR and employee-engagement platform: internal posts, gamification and brand-partner integrations, answering for nearly all front-end technical decisions.',
+          'WeDo / Comunify — lead front-end developer (Angular), answering for nearly all front-end technical decisions. On the Java and Spring Boot back end, built REST APIs with TDD and automated tests.',
         ],
       },
       {
@@ -164,32 +162,32 @@ export const CONTENT_EN: SiteContent = {
   projects: {
     reel: 'Reel 04 — deliveries',
     title: 'Selected work',
-    note: 'Systems delivered on client projects. Details available under NDA.',
+    note: 'Systems for corporate clients. Code and screens are not public.',
     cta: 'Visit my GitHub',
     takeLabel: 'take 01',
     items: [
       {
         sector: 'Steel industry',
         name: 'ArcelorMittal',
-        body: 'Migration of a legacy internal WPF (.NET) system to an Angular web application, with AI-assisted development supporting the modernisation.',
+        body: 'An internal system, formerly desktop (WPF/.NET), rebuilt as a web application.',
         stack: 'Angular · TypeScript · Spring',
       },
       {
         sector: 'HR & engagement',
         name: 'WeDo / Comunify',
-        body: 'Front end of an HR platform: internal posts, gamification and brand-partner integrations. I was the lead front-end developer.',
-        stack: 'Angular · TypeScript',
+        body: 'HR and employee-engagement platform: internal posts, gamification and brand-partner integrations.',
+        stack: 'Angular · Spring Boot · TDD',
       },
       {
         sector: 'Healthcare',
         name: 'Unimed Goiânia',
-        body: 'Appointment scheduling system built end to end. At one project stage, as the only developer.',
+        body: 'Medical appointment scheduling for a healthcare provider, from database to interface.',
         stack: 'Angular · Spring · SQL',
       },
       {
         sector: 'Legal',
         name: 'Risch Law Firm',
-        body: 'Case and operations management system for an immigration law firm, built in Angular and Spring.',
+        body: 'Case and operations management for an immigration law firm.',
         stack: 'Angular · Spring · SQL',
       },
     ],
