@@ -30,4 +30,19 @@ describe('SiteNav', () => {
 
     expect(el.querySelector('.lang')?.textContent?.trim()).toBe(CONTENT[lang].nav.switchLabel);
   });
+
+  it('keeps brand before lang switch before the first section link in DOM order', async () => {
+    const fixture = TestBed.createComponent(SiteNav);
+    fixture.componentRef.setInput('nav', CONTENT.pt.nav);
+    fixture.componentRef.setInput('lang', 'pt');
+    await fixture.whenStable();
+    const el: HTMLElement = fixture.nativeElement;
+
+    const brand = el.querySelector('.brand') as Node;
+    const lang = el.querySelector('.lang') as Node;
+    const firstLink = el.querySelector('.link') as Node;
+
+    expect(brand.compareDocumentPosition(lang) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+    expect(lang.compareDocumentPosition(firstLink) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+  });
 });

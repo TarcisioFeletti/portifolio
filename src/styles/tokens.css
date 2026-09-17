@@ -31,7 +31,7 @@
   color-scheme: dark;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 719.98px) {
   :root {
     --nav-height: 96px;
   }
