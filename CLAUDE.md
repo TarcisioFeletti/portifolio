@@ -4,11 +4,11 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project
 
-Tarcisio Feletti's personal portfolio: a one-page, bilingual (PT at `/`, EN at `/en/`) site. Visual source of truth: the Claude Design project "Portfolio Tarcisio v3" — a dark, cinematic "film reel" look (Anton / Archivo / JetBrains Mono). A local copy of the design HTML, including the full PT/EN copy, is in `design/portfolio-v3.dc.html` (gitignored: it holds private contact details). Content comes from Tarcisio's CV.
+Tarcisio Feletti's personal portfolio: a one-page, bilingual (PT at `/`, EN at `/en/`) site. Visual direction: the lean, recruiter-first "v4" (US-001, `docs/specs/US-001/TECH.md`) — one dark column, a single yellow accent, Anton only for the name and section titles, Archivo / JetBrains Mono elsewhere, no decorative animation. The earlier "film reel" v3 design (`design/portfolio-v3.dc.html`, gitignored) is historical reference only. Content comes from Tarcisio's CV.
 
 ## Current state
 
-The design is fully implemented in Angular 22. Sections: top HUD, sticky nav, hero, portrait plate with stickers, readout strip, about (marquee and stats), stack, experience, projects, education, contact/footer. There is also a CSR not-found page. The GitHub Pages workflow is in place.
+The design is fully implemented in Angular 22. Sections: sticky nav, hero (small portrait, name, role, value prop, CTAs), about (stats), stack, experience (client work nested per job), open-source (this portfolio), education, contact/footer. There is also a CSR not-found page. The GitHub Pages workflow is in place.
 
 Commands: `npm start`, `npm run lint`, `npm run test:ci` (Vitest), `npm run build` (prerender + `scripts/postbuild.mjs`). Requires Node 24 (`.nvmrc`). On Windows Git Bash, prefix commands that pass `/portifolio/` with `MSYS_NO_PATHCONV=1`. For a local Pages-like build: `SITE_URL=https://tarcisiofeletti.github.io/portifolio npm run build -- --base-href /portifolio/`.
 
@@ -23,8 +23,8 @@ Commands: `npm start`, `npm run lint`, `npm run test:ci` (Vitest), `npm run buil
   - Copy lives in `core/data/content.pt.ts` and `content.en.ts`, typed by `content.model.ts`. A spec enforces that both have identical shape.
   - Language-independent facts (email, social links) live in `core/data/profile.ts`. The phone number and the CV download are intentionally not published for now.
 - **Hosting:** GitHub Pages, deployed by GitHub Actions on push to `main`. PRs run format check, lint, test and build only.
-- **Styling:** SCSS + CSS custom-property tokens in `src/styles/tokens.css`. Global utilities in `src/styles.scss`: `.hud`, `.ticks`, `.corners` (gradient corner marks), `.section-title`. The design is dark-only by intent, so there is no theme toggle.
-- **Assets:** `public/assets/portrait.webp` is the portrait with its background (WebP, converted from the PNG export).
+- **Styling:** SCSS + CSS custom-property tokens in `src/styles/tokens.css`. Global utilities in `src/styles.scss`: `.page`, `.eyebrow`, `.section-title`, `.skip-link`, `.visually-hidden`. The design is dark-only by intent, so there is no theme toggle.
+- **Assets:** `public/assets/portrait.webp` is a 320×320 color head-and-shoulders crop shown in a circle (source photo in `design/`).
 - **Lint/format:** angular-eslint (with template a11y rules) + Prettier. **Tests:** Vitest via `ng test`. **Package manager:** npm.
 
 ## Layout
@@ -32,9 +32,8 @@ Commands: `npm start`, `npm run lint`, `npm run test:ci` (Vitest), `npm run buil
 ```
 src/app/
   core/          data/ (typed content + profile), seo/ (title, meta, canonical, hreflang)
-  shared/ui/     section-header, accent pipe (maps an Accent name to its color token)
-  features/      site-chrome (film overlay, top HUD, nav), hero (hero, portrait-plate, readout-strip),
-                 about, stack, experience, projects, education, contact; index.ts is each feature's public surface
+  features/      site-chrome (nav), hero, about, stack, experience, open-source,
+                 education, contact; index.ts is each feature's public surface
   pages/         portfolio (both languages), not-found
 src/styles/tokens.css
 public/          static files copied as-is (assets/, favicon)
@@ -47,13 +46,13 @@ design/          local design reference (gitignored, not built)
 1. Static-only output; every real route is prerendered.
 2. Features never import other features; `shared/` and `core/` never import `features/` or `pages/`.
 3. SSR-safe: browser globals only inside `afterNextRender` or platform guards.
-4. Design tokens only; no hardcoded colors in components. Per-item accents use the `Accent` type and the `accent` pipe.
+4. Design tokens only; no hardcoded colors in components. The only accent is `--color-yellow` (links, primary CTA, dates, focus).
 5. Content lives in `core/data`, not in templates. Any new copy must be added to both PT and EN.
 6. Base-href-safe URLs (the site is served at `/<repo>/`). The base href is set in CI and never hardcoded.
    - In-page anchors use `routerLink` + `fragment`, not `href="#..."`.
    - Assets use relative paths.
 7. No secrets in the bundle (`environment.ts` is public).
-8. WCAG AA, responsive from 320px, `prefers-reduced-motion` stops every animation (film grain, scanlines, marquee, sticker spin).
+8. WCAG AA, responsive from 320px, no decorative animation; `prefers-reduced-motion` disables any transition.
 9. Almost no comments; only a non-obvious _why_.
 
 ## Agents & workflow (`.claude/agents/`)
