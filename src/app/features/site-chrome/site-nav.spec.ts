@@ -21,10 +21,12 @@ describe('SiteNav', () => {
 
     const links = Array.from(el.querySelectorAll('.link'));
     expect(links.length).toBe(4);
-    expect(links.some((link) => link.getAttribute('href')?.includes('projetos'))).toBe(false);
-    for (const link of links) {
-      expect(link.getAttribute('href')).toMatch(/#[a-z]+$/);
-    }
+    expect(links.map((link) => link.getAttribute('href')?.split('#').at(-1))).toEqual([
+      'sobre',
+      'stack',
+      'experiencia',
+      'contato',
+    ]);
 
     expect(el.querySelector('.lang')?.textContent?.trim()).toBe(CONTENT[lang].nav.switchLabel);
   });

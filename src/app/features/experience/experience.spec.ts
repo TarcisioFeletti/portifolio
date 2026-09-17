@@ -31,6 +31,12 @@ describe('Experience', () => {
       }
 
       expect(el.querySelectorAll('.clients a').length).toBe(0);
+
+      const internJob = jobs.at(2);
+      expect(internJob).toBeDefined();
+      expect(internJob?.clients.length).toBe(0);
+      const internClients = el.querySelectorAll('.job')[2]?.querySelectorAll('.clients');
+      expect(internClients?.length).toBe(0);
     },
   );
 });

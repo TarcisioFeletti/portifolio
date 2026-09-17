@@ -1,9 +1,6 @@
 <nav class="nav" [attr.aria-label]="nav().ariaLabel">
-  <a class="brand" [routerLink]="homePath()" fragment="top">{{ profile.name }}</a>
-  <div class="links">
-    @for (section of nav().sections; track section.id) {
-      <a class="link" [routerLink]="homePath()" [fragment]="section.id">{{ section.label }}</a>
-    }
+  <div class="row-top">
+    <a class="brand" [routerLink]="homePath()" fragment="top">{{ profile.name }}</a>
     <a
       class="lang"
       [routerLink]="switchPath()"
@@ -11,5 +8,10 @@
       [attr.hreflang]="lang() === 'pt' ? 'en' : 'pt-BR'"
       >{{ nav().switchLabel }}</a
     >
+  </div>
+  <div class="links">
+    @for (section of nav().sections; track section.id) {
+      <a class="link" [routerLink]="homePath()" [fragment]="section.id">{{ section.label }}</a>
+    }
   </div>
 </nav>

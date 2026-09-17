@@ -3,7 +3,7 @@ export interface SocialLink {
   url: string;
 }
 
-const SOCIALS: [SocialLink, SocialLink] = [
+const SOCIALS: readonly [SocialLink, SocialLink] = [
   { label: 'LinkedIn', url: 'https://www.linkedin.com/in/tarcisio-feletti-3b9923219' },
   { label: 'GitHub', url: 'https://github.com/TarcisioFeletti' },
 ];

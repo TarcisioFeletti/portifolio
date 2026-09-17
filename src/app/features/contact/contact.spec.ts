@@ -17,6 +17,8 @@ describe('Contact', () => {
       expect(hrefs).toContain(PROFILE.socials[0].url);
       expect(hrefs).toContain(PROFILE.socials[1].url);
       expect(hrefs.some((href) => href?.startsWith('tel:'))).toBe(false);
+      expect(el.querySelector('a[download]')).toBeNull();
+      expect(hrefs.some((href) => href?.includes('.pdf'))).toBe(false);
 
       expect(el.textContent).toContain(CONTENT[lang].contact.location);
       expect(el.textContent).toContain(String(PROFILE.year));

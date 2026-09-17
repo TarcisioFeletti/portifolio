@@ -6,11 +6,11 @@
   <p class="role">{{ hero().role }}</p>
   <p class="value-prop">{{ hero().valueProp }}</p>
   <div class="ctas">
-    <a class="cta-primary" [href]="linkedin().url" target="_blank" rel="noopener noreferrer">
-      {{ linkedin().label }}
+    <a class="cta-primary" [href]="linkedin.url" target="_blank" rel="noopener noreferrer">
+      {{ linkedin.label }}
     </a>
     <a class="cta" [href]="'mailto:' + profile.email">{{ hero().ctaMail }}</a>
-    @for (social of otherSocials(); track social.label) {
+    @for (social of otherSocials; track social.label) {
       <a class="cta" [href]="social.url" target="_blank" rel="noopener noreferrer">{{
         social.label
       }}</a>

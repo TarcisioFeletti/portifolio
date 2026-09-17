@@ -17,7 +17,9 @@ describe('Education', () => {
       expect(el.querySelector('h3')?.textContent).toContain(firstCourse?.course);
 
       expect(el.querySelectorAll('.cert').length).toBe(0);
-      const certsText = el.querySelector('.certs')?.textContent ?? '';
+      const certParagraphs = el.querySelectorAll('.certs');
+      expect(certParagraphs.length).toBe(1);
+      const certsText = certParagraphs[0]?.textContent ?? '';
       for (const cert of education.certs) {
         expect(certsText).toContain(cert);
       }

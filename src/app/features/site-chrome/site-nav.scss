@@ -7,14 +7,19 @@
 
 .nav {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 10px;
   padding: 14px var(--gutter);
   background: var(--color-ink-glass);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--color-line);
+}
+
+.row-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
 }
 
 .brand {
@@ -30,10 +35,10 @@
   align-items: center;
   gap: clamp(10px, 2vw, 26px);
   flex-wrap: wrap;
-  justify-content: flex-end;
 }
 
 .link {
+  padding-block: 8px;
   font-size: 13px;
   font-weight: 400;
   text-decoration: none;
@@ -58,5 +63,24 @@
     background: var(--color-yellow);
     border-color: var(--color-yellow);
     color: var(--color-ink);
+  }
+}
+
+@media (min-width: 720px) {
+  .nav {
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+
+  .row-top {
+    flex: 0 0 auto;
+    gap: 20px;
+  }
+
+  .links {
+    flex: 1 1 auto;
+    justify-content: flex-end;
   }
 }

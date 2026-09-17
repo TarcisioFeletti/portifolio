@@ -19,17 +19,24 @@ describe('Hero', () => {
     },
   );
 
-  it('renders exactly one primary CTA and links to mail, LinkedIn and GitHub', async () => {
-    const fixture = TestBed.createComponent(Hero);
-    fixture.componentRef.setInput('hero', CONTENT.pt.hero);
-    await fixture.whenStable();
-    const el: HTMLElement = fixture.nativeElement;
+  it.each(['pt', 'en'] as const)(
+    'renders exactly one primary CTA linking to LinkedIn, then mail, then GitHub for %s',
+    async (lang) => {
+      const fixture = TestBed.createComponent(Hero);
+      fixture.componentRef.setInput('hero', CONTENT[lang].hero);
+      await fixture.whenStable();
+      const el: HTMLElement = fixture.nativeElement;
 
-    expect(el.querySelectorAll('.cta-primary').length).toBe(1);
+      const primaries = el.querySelectorAll('.cta-primary');
+      expect(primaries.length).toBe(1);
+      expect(primaries[0]?.getAttribute('href')).toBe(PROFILE.socials[0].url);
 
-    const hrefs = Array.from(el.querySelectorAll('a')).map((a) => a.getAttribute('href'));
-    expect(hrefs).toContain(`mailto:${PROFILE.email}`);
-    expect(hrefs).toContain(PROFILE.socials[0].url);
-    expect(hrefs).toContain(PROFILE.socials[1].url);
-  });
+      const hrefs = Array.from(el.querySelectorAll('a')).map((a) => a.getAttribute('href'));
+      expect(hrefs).toEqual([
+        PROFILE.socials[0].url,
+        `mailto:${PROFILE.email}`,
+        PROFILE.socials[1].url,
+      ]);
+    },
+  );
 });

@@ -2,11 +2,11 @@
   <h2 id="experience-title" class="section-title title">{{ experience().title }}</h2>
 
   <ol class="jobs" role="list">
-    @for (job of experience().jobs; track job.period) {
+    @for (job of experience().jobs; track $index) {
       <li class="job">
-        <div>
-          <span class="job-period">{{ job.period }}</span>
+        <div class="job-head">
           <h3 class="job-role">{{ job.role }}</h3>
+          <span class="job-period">{{ job.period }}</span>
           <p class="job-org">{{ job.org }}</p>
           <p class="job-place">{{ job.place }}</p>
           <p class="job-stack">{{ job.stack }}</p>
@@ -15,7 +15,7 @@
           <p class="job-summary">{{ job.summary }}</p>
           @if (job.clients.length) {
             <ul class="clients" role="list" [attr.aria-label]="experience().clientsLabel">
-              @for (client of job.clients; track client.name) {
+              @for (client of job.clients; track $index) {
                 <li class="client">
                   <p class="client-sector eyebrow">{{ client.sector }}</p>
                   <h4 class="client-name">{{ client.name }}</h4>
