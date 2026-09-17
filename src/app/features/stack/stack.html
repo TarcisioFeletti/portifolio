@@ -1,10 +1,13 @@
-<section id="stack" class="stack" aria-labelledby="stack-title">
-  <div class="heading">
-    <h2 id="stack-title" class="section-title">{{ stack().title }}</h2>
-    <p class="note">{{ stack().note }}</p>
-  </div>
+<section id="stack" class="container section divided" aria-labelledby="stack-title">
+  <app-section-heading
+    [index]="2"
+    [kicker]="stack().kicker"
+    [title]="stack().title"
+    titleId="stack-title"
+  />
+  <p class="note">{{ stack().note }}</p>
 
-  <div class="groups">
+  <div class="grid">
     @for (group of stack().groups; track group.title) {
       <div class="group">
         <h3 class="group-title">{{ group.title }}</h3>

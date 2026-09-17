@@ -1,5 +1,6 @@
 import { CONTENT, canonicalPath } from './content';
 import { SiteContent } from './content.model';
+import { PROFILE } from './profile';
 
 function shape(value: unknown): unknown {
   if (Array.isArray(value)) return value.map(shape);
@@ -50,18 +51,11 @@ describe('site content', () => {
     },
   );
 
-  it.each(['pt', 'en'] as const)('lists the Optsolv and Itix FS clients in %s', (lang) => {
-    const optsolv = CONTENT[lang].experience.jobs.find((job) => job.org === 'Optsolv');
-    const itixFs = CONTENT[lang].experience.jobs.find(
-      (job) => job.org === 'Itix' && job.clients.length > 0,
-    );
-    expect(optsolv?.clients.map((client) => client.name)).toEqual([
-      'ArcelorMittal',
-      'WeDo / Comunify',
-    ]);
-    expect(itixFs?.clients.map((client) => client.name)).toEqual([
-      'Unimed Goiânia',
-      'Risch Law Firm',
-    ]);
-  });
+  it.each(['pt', 'en'] as const)(
+    'links only the portfolio project to its repository in %s',
+    (lang) => {
+      const linked = CONTENT[lang].projects.items.filter((project) => project.link);
+      expect(linked.map((project) => project.link)).toEqual([PROFILE.repo]);
+    },
+  );
 });

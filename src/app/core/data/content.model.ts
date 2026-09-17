@@ -1,5 +1,10 @@
 export type Lang = 'pt' | 'en';
 
+export interface SectionTitle {
+  lead: string;
+  highlight: string;
+}
+
 export interface Stat {
   value: string;
   label: string;
@@ -10,28 +15,22 @@ export interface SkillGroup {
   items: string[];
 }
 
-export interface ClientWork {
-  name: string;
-  sector: string;
-  product: string;
-  role: string;
-  stack: string;
-}
-
 export interface Job {
   role: string;
   org: string;
   place: string;
   period: string;
-  stack: string;
   summary: string;
-  clients: ClientWork[];
+  tech: string[];
+  highlights: string[];
 }
 
-export interface Education {
-  course: string;
-  school: string;
-  period: string;
+export interface Project {
+  name: string;
+  meta: string;
+  body: string;
+  tech: string[];
+  link?: string;
 }
 
 export interface SiteContent {
@@ -44,37 +43,36 @@ export interface SiteContent {
     sections: { id: string; label: string }[];
     switchLabel: string;
     switchAria: string;
+    menuLabel: string;
   };
   hero: {
     role: string;
     valueProp: string;
     portraitAlt: string;
     ctaMail: string;
+    highlights: Stat[];
   };
-  about: {
-    kicker: string;
-    title: string;
-    paragraphs: string[];
-    stats: Stat[];
-  };
-  stack: { title: string; note: string; groups: SkillGroup[] };
-  experience: { title: string; clientsLabel: string; jobs: Job[] };
-  openSource: { title: string; name: string; body: string; stack: string; cta: string };
+  about: { kicker: string; title: SectionTitle; paragraphs: string[]; stats: Stat[] };
+  stack: { kicker: string; title: SectionTitle; note: string; groups: SkillGroup[] };
+  experience: { kicker: string; title: SectionTitle; jobs: Job[] };
+  projects: { kicker: string; title: SectionTitle; linkLabel: string; items: Project[] };
   education: {
     kicker: string;
-    title: string;
-    items: Education[];
+    title: SectionTitle;
+    degree: { label: string; period: string; course: string; school: string };
+    research: { kicker: string; body: string };
+    technical: { label: string; course: string; period: string };
     certKicker: string;
     certs: string[];
-    research: { kicker: string; body: string };
   };
   contact: {
     kicker: string;
-    title: string;
+    title: SectionTitle;
     emailLabel: string;
     profilesLabel: string;
     locationLabel: string;
     location: string;
     footerRole: string;
+    sourceLabel: string;
   };
 }

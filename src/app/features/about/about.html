@@ -1,22 +1,25 @@
-<section id="sobre" class="about" aria-labelledby="about-title">
-  <div class="columns">
-    <div>
-      <p class="eyebrow">{{ about().kicker }}</p>
-      <h2 id="about-title" class="section-title">{{ about().title }}</h2>
-    </div>
+<section id="sobre" class="container section" aria-labelledby="about-title">
+  <app-section-heading
+    [index]="1"
+    [kicker]="about().kicker"
+    [title]="about().title"
+    titleId="about-title"
+  />
+
+  <div class="grid">
     <div class="body">
       @for (paragraph of about().paragraphs; track $index; let first = $first) {
         <p [class.lead]="first">{{ paragraph }}</p>
       }
     </div>
-  </div>
 
-  <dl class="stats">
-    @for (stat of about().stats; track stat.label) {
-      <div class="stat">
-        <dt class="stat-label">{{ stat.label }}</dt>
-        <dd class="stat-value">{{ stat.value }}</dd>
-      </div>
-    }
-  </dl>
+    <dl class="stats">
+      @for (stat of about().stats; track $index) {
+        <div class="stat">
+          <dt class="stat-label">{{ stat.label }}</dt>
+          <dd class="stat-value">{{ stat.value }}</dd>
+        </div>
+      }
+    </dl>
+  </div>
 </section>

@@ -8,7 +8,7 @@ import { SeoService } from '../../core/seo/seo.service';
   imports: [RouterLink],
   template: `
     <main class="not-found" aria-labelledby="nf-title">
-      <p class="eyebrow">Erro 404 · cena não encontrada</p>
+      <p class="label">Erro 404</p>
       <h1 id="nf-title" class="title">Página não encontrada</h1>
       <p class="body">O endereço acessado não existe ou foi movido.</p>
       <a class="back" routerLink="/">Voltar para o início →</a>
@@ -24,6 +24,7 @@ import { SeoService } from '../../core/seo/seo.service';
     }
     .title {
       font-family: var(--font-display);
+      color: var(--color-text-strong);
       font-weight: 400;
       font-size: clamp(46px, 11vw, 140px);
       line-height: 0.9;
@@ -39,7 +40,7 @@ import { SeoService } from '../../core/seo/seo.service';
       letter-spacing: 0.08em;
       text-transform: uppercase;
       text-decoration: none;
-      border-bottom: 2px solid var(--color-yellow);
+      border-bottom: 2px solid var(--color-accent);
       padding-bottom: 3px;
     }
   `,

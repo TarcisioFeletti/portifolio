@@ -4,24 +4,21 @@ import { About } from './about';
 
 describe('About', () => {
   it.each(['pt', 'en'] as const)(
-    'renders the paragraphs and neutral stats for %s',
+    'renders the numbered heading, paragraphs and stats for %s',
     async (lang) => {
       const fixture = TestBed.createComponent(About);
       fixture.componentRef.setInput('about', CONTENT[lang].about);
       await fixture.whenStable();
       const el: HTMLElement = fixture.nativeElement;
+      const about = CONTENT[lang].about;
 
-      const paragraphs = el.querySelectorAll('.body p');
-      expect(paragraphs.length).toBe(2);
-      expect(Array.from(paragraphs).map((p) => p.textContent)).toEqual(
-        CONTENT[lang].about.paragraphs,
+      expect(el.querySelector('.kicker')?.textContent?.trim()).toBe(`[ 01 ] ${about.kicker}`);
+      expect(el.querySelector('h2')?.id).toBe('about-title');
+      expect(el.querySelector('h2 .highlight')?.textContent).toBe(about.title.highlight);
+      expect(Array.from(el.querySelectorAll('.body p')).map((p) => p.textContent)).toEqual(
+        about.paragraphs,
       );
-
-      const stats = el.querySelectorAll('dl.stats .stat');
-      expect(stats.length).toBe(3);
-
-      expect(el.querySelector('.marquee')).toBeNull();
-      expect(el.querySelectorAll('[style*="color"]').length).toBe(0);
+      expect(el.querySelectorAll('dl.stats .stat').length).toBe(about.stats.length);
     },
   );
 });

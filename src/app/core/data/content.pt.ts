@@ -15,11 +15,14 @@ export const CONTENT_PT: SiteContent = {
     sections: [
       { id: 'sobre', label: 'Sobre' },
       { id: 'stack', label: 'Stack' },
-      { id: 'experiencia', label: 'Experiência' },
+      { id: 'carreira', label: 'Carreira' },
+      { id: 'projetos', label: 'Projetos' },
+      { id: 'formacao', label: 'Formação' },
       { id: 'contato', label: 'Contato' },
     ],
     switchLabel: 'EN',
     switchAria: 'View in English',
+    menuLabel: 'Abrir menu',
   },
   hero: {
     role: 'Desenvolvedor Full Stack',
@@ -27,10 +30,15 @@ export const CONTENT_PT: SiteContent = {
       'Mais de 4 anos construindo sistemas web com Java/Spring e Angular. Disponível para remoto e presencial na Grande Vitória.',
     portraitAlt: 'Retrato de Tarcisio Feletti',
     ctaMail: 'Falar comigo',
+    highlights: [
+      { value: '+4', label: 'anos de experiência' },
+      { value: '04', label: 'setores atendidos' },
+      { value: '04', label: 'sistemas entregues' },
+    ],
   },
   about: {
-    kicker: 'Sobre mim',
-    title: 'Autonomia técnica, do back ao front',
+    kicker: 'Sobre',
+    title: { lead: 'Autonomia técnica,', highlight: 'do back ao front.' },
     paragraphs: [
       'Ao longo da carreira fui assumindo cada vez mais autonomia: já fui responsável principal pelo front-end de um produto, tomei decisões de arquitetura e conduzi publicações e entregas. Em uma fase de projeto atuei como único desenvolvedor, respondendo por tudo — do banco ao deploy.',
       'No back-end, construo APIs REST em Spring Boot com testes desde o início (TDD) e código limpo. Também já montei pipelines de CI/CD e usei Docker e AWS nas entregas.',
@@ -42,7 +50,8 @@ export const CONTENT_PT: SiteContent = {
     ],
   },
   stack: {
-    title: 'Stack & competências',
+    kicker: 'Stack',
+    title: { lead: 'Ferramentas do', highlight: 'dia a dia.' },
     note: 'As ferramentas que uso no dia a dia, em ordem de proximidade.',
     groups: [
       {
@@ -74,34 +83,20 @@ export const CONTENT_PT: SiteContent = {
     ],
   },
   experience: {
-    title: 'Experiência',
-    clientsLabel: 'Clientes',
+    kicker: 'Carreira',
+    title: { lead: 'Experiência', highlight: 'profissional.' },
     jobs: [
       {
         role: 'Desenvolvedor de Software',
         org: 'Optsolv',
         place: 'Vila Velha, ES',
         period: '05/2024 — 09/2026',
-        stack: 'Java · Spring · Angular · TypeScript · SQL',
         summary:
-          'Desenvolvimento de sistemas para clientes corporativos, com responsabilidade técnica sobre o front-end e contribuição no back-end em Java e Spring Boot.',
-        clients: [
-          {
-            name: 'ArcelorMittal',
-            sector: 'Indústria',
-            product:
-              'Sistema interno, antes em desktop (WPF/.NET), reconstruído como aplicação web.',
-            role: 'Migração do sistema legado para uma aplicação web moderna em Angular, usando desenvolvimento assistido por IA para acelerar a modernização mantendo a qualidade do código.',
-            stack: 'Angular · TypeScript · Spring',
-          },
-          {
-            name: 'WeDo / Comunify',
-            sector: 'RH & engajamento',
-            product:
-              'Plataforma de RH e engajamento de colaboradores: posts internos, gamificação e integrações com parceiros da marca.',
-            role: 'Responsável principal pelo front-end em Angular, respondendo por praticamente todas as decisões técnicas do front. No back-end em Java e Spring Boot, construí APIs REST com TDD e testes automatizados.',
-            stack: 'Angular · Spring Boot · TDD',
-          },
+          'Desenvolvimento de sistemas para clientes corporativos, com responsabilidade técnica sobre o front-end em Angular e contribuição no back-end em Java e Spring Boot.',
+        tech: ['Java', 'Spring', 'Angular', 'TypeScript', 'SQL'],
+        highlights: [
+          'Responsável principal pelo front-end em Angular da plataforma WeDo / Comunify, respondendo por praticamente todas as decisões técnicas do front, e também contribuí com features no back-end em Java e Spring Boot, com APIs REST e TDD.',
+          'Migração de um sistema interno da ArcelorMittal de desktop (WPF/.NET) para aplicação web moderna.',
         ],
       },
       {
@@ -109,26 +104,12 @@ export const CONTENT_PT: SiteContent = {
         org: 'Itix',
         place: 'Espírito Santo, Brasil',
         period: '01/2023 — 05/2024',
-        stack: 'Java · Spring · Angular · TypeScript · SQL',
         summary:
           'Desenvolvimento de aplicações web full stack para clientes da empresa, com participação em decisões técnicas e nas publicações.',
-        clients: [
-          {
-            name: 'Unimed Goiânia',
-            sector: 'Saúde',
-            product:
-              'Agendamento de consultas médicas para uma operadora de saúde, do banco de dados à interface.',
-            role: 'Desenvolvimento completo do sistema em Angular e Spring. Em uma fase do projeto atuei como único desenvolvedor, assumindo as decisões técnicas e a responsabilidade pelas publicações.',
-            stack: 'Angular · Spring · SQL',
-          },
-          {
-            name: 'Risch Law Firm',
-            sector: 'Jurídico',
-            product:
-              'Organização de processos e operações de um escritório de advocacia de imigração.',
-            role: 'Desenvolvimento, como dev Angular + Spring, de todo o sistema.',
-            stack: 'Angular · Spring · SQL',
-          },
+        tech: ['Java', 'Spring', 'Angular', 'TypeScript', 'SQL'],
+        highlights: [
+          'Sistema de agendamento de consultas da Unimed Goiânia, do banco de dados à interface — em uma fase, como único desenvolvedor.',
+          'Sistema de processos e operações do Risch Law Firm, desenvolvido como dev Angular + Spring.',
         ],
       },
       {
@@ -136,50 +117,81 @@ export const CONTENT_PT: SiteContent = {
         org: 'Itix',
         place: 'Alegre, ES',
         period: '07/2022 — 01/2023',
-        stack: 'Java · Spring · Angular',
         summary:
           'Primeiro contato profissional com desenvolvimento de software, apoiando o time em tarefas de desenvolvimento e correções, com aplicação prática de Java, Spring e Angular.',
-        clients: [],
+        tech: ['Java', 'Spring', 'Angular'],
+        highlights: [],
       },
     ],
   },
-  openSource: {
-    title: 'Projeto público',
-    name: 'Este portfólio',
-    body: 'Site bilíngue estático em Angular 22, pré-renderizado e publicado no GitHub Pages via GitHub Actions.',
-    stack: 'Angular 22 · SSG · GitHub Pages',
-    cta: 'Ver o código no GitHub',
+  projects: {
+    kicker: 'Projetos',
+    title: { lead: 'Sistemas que', highlight: 'entrei para construir.' },
+    linkLabel: 'Ver projeto',
+    items: [
+      {
+        name: 'ArcelorMittal',
+        meta: 'Indústria · Optsolv',
+        body: 'Sistema interno antes em desktop (WPF/.NET), reconstruído como aplicação web. Migração do legado para Angular, com desenvolvimento assistido por IA para acelerar a modernização mantendo a qualidade do código.',
+        tech: ['Angular', 'TypeScript', 'Spring'],
+      },
+      {
+        name: 'WeDo / Comunify',
+        meta: 'RH & engajamento · Optsolv',
+        body: 'Plataforma de RH e engajamento: posts internos, gamificação e integrações com parceiros da marca. Fui responsável principal pelo front-end em Angular e construí APIs REST em Spring Boot com TDD.',
+        tech: ['Angular', 'Spring Boot', 'TDD'],
+      },
+      {
+        name: 'Unimed Goiânia',
+        meta: 'Saúde · Itix',
+        body: 'Agendamento de consultas médicas para uma operadora de saúde, do banco à interface. Em uma fase do projeto atuei como único desenvolvedor, assumindo decisões técnicas e publicações.',
+        tech: ['Angular', 'Spring', 'SQL'],
+      },
+      {
+        name: 'Risch Law Firm',
+        meta: 'Jurídico · Itix',
+        body: 'Organização de processos e operações de um escritório de advocacia de imigração, desenvolvida de ponta a ponta como dev Angular + Spring.',
+        tech: ['Angular', 'Spring', 'SQL'],
+      },
+      {
+        name: 'Este portfólio',
+        meta: 'Open source',
+        body: 'Site bilíngue estático em Angular 22, pré-renderizado e publicado no GitHub Pages via GitHub Actions.',
+        tech: ['Angular 22', 'SSG', 'GitHub Pages'],
+        link: 'https://github.com/TarcisioFeletti/portifolio',
+      },
+    ],
   },
   education: {
     kicker: 'Formação',
-    title: 'Base acadêmica',
-    items: [
-      {
-        course: 'Bacharelado em Sistemas de Informação',
-        school: 'UFES — Universidade Federal do Espírito Santo',
-        period: '2018 — 2023',
-      },
-      {
-        course: 'Ensino Técnico em Informática',
-        school: 'CEEFMTI Bráulio Franco',
-        period: '2015 — 2017',
-      },
-    ],
-    certKicker: 'Certificações',
-    certs: ['AWS Academy Cloud Foundations', 'CCNA: Introduction to Networks'],
+    title: { lead: 'Base', highlight: 'acadêmica.' },
+    degree: {
+      label: 'Bacharelado',
+      period: '2018 — 2023',
+      course: 'Sistemas de Informação',
+      school: 'UFES — Universidade Federal do Espírito Santo',
+    },
     research: {
       kicker: 'Iniciação científica · UFES, 2021–2022',
       body: 'Meta-heurística Clustering Search aplicada ao problema de roteamento no planejamento de inventário florestal.',
     },
+    technical: {
+      label: 'Ensino técnico',
+      course: 'Informática — CEEFMTI Bráulio Franco',
+      period: '2015 — 2017',
+    },
+    certKicker: 'Certificações',
+    certs: ['AWS Academy Cloud Foundations', 'CCNA: Introduction to Networks'],
   },
   contact: {
     kicker: 'Contato',
-    title: 'Vamos conversar',
+    title: { lead: 'Vamos', highlight: 'conversar.' },
     emailLabel: 'E-mail',
     profilesLabel: 'Redes',
     locationLabel: 'Onde estou',
     location:
       'Muniz Freire, ES. Disponível para remoto — aberto a híbrido ou presencial na Grande Vitória.',
     footerRole: 'Desenvolvedor Full Stack',
+    sourceLabel: 'Código deste site',
   },
 };

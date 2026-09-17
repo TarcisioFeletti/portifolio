@@ -1,33 +1,44 @@
+@let c = contact();
+
 <footer id="contato" class="contact" aria-labelledby="contact-title">
-  <p class="eyebrow">{{ contact().kicker }}</p>
-  <h2 id="contact-title" class="section-title">{{ contact().title }}</h2>
+  <div class="container inner">
+    <app-section-heading
+      [index]="6"
+      [kicker]="c.kicker"
+      [title]="c.title"
+      titleId="contact-title"
+      size="large"
+    />
 
-  <dl class="channels">
-    <div>
-      <dt class="label">{{ contact().emailLabel }}</dt>
-      <dd>
-        <a class="channel" [href]="'mailto:' + profile.email">
-          {{ profile.email }}
-        </a>
-      </dd>
-    </div>
-    <div>
-      <dt class="label">{{ contact().profilesLabel }}</dt>
-      <dd class="profiles">
-        @for (social of profile.socials; track social.url) {
-          <a class="channel" [href]="social.url" target="_blank" rel="noopener noreferrer">{{
-            social.label
-          }}</a>
-        }
-      </dd>
-    </div>
-    <div>
-      <dt class="label">{{ contact().locationLabel }}</dt>
-      <dd class="location">{{ contact().location }}</dd>
-    </div>
-  </dl>
+    <div class="grid">
+      <div class="channels">
+        <div>
+          <p class="label">{{ c.emailLabel }}</p>
+          <a class="email" [href]="'mailto:' + profile.email">{{ profile.email }}</a>
+        </div>
+        <div>
+          <p class="label">{{ c.profilesLabel }}</p>
+          <div class="profiles">
+            @for (social of profile.socials; track social.url) {
+              <a class="pill" [href]="social.url" target="_blank" rel="noopener noreferrer">{{
+                social.label
+              }}</a>
+            }
+          </div>
+        </div>
+      </div>
 
-  <div class="bottom">
-    <small class="copyright">© {{ profile.year }} — {{ contact().footerRole }}</small>
+      <div>
+        <p class="label">{{ c.locationLabel }}</p>
+        <p class="location">{{ c.location }}</p>
+      </div>
+    </div>
+
+    <div class="bottom">
+      <small class="copyright">© {{ profile.year }} — {{ c.footerRole }}</small>
+      <a class="source" [href]="profile.repo" target="_blank" rel="noopener noreferrer"
+        >{{ c.sourceLabel }} <span aria-hidden="true">↗</span></a
+      >
+    </div>
   </div>
 </footer>

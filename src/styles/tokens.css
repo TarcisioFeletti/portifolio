@@ -1,38 +1,43 @@
-/* Palette and type from the Claude Design "Portfolio Tarcisio v3" (design/portfolio-v3.dc.html). */
+/* Palette and type from the Claude Design project "Portfolio Redesign" (Portfolio Redesign.dc.html). */
 :root {
-  --color-ink: #0c0c0c;
-  --color-ink-raised: #141312;
-  --color-ink-glass: rgb(12 12 12 / 92%);
-  --color-paper: #efeae1;
-  --color-yellow: #f4db2e;
+  --color-bg: #14222a;
+  --color-bg-deep: #16262e;
+  --color-surface: #1a2b33;
+  --color-surface-soft: #18282f;
+  --color-surface-badge: #22343d;
+  --color-bg-glass: rgb(20 34 42 / 88%);
 
-  --color-text-strong: #d8d3cc;
-  --color-text-soft: #b5b0a9;
-  --color-text-dim: #a8a39c;
-  --color-text-nav: #cdc8c1;
-  --color-muted: #8a8580;
+  --color-text: #e7eeee;
+  --color-text-strong: #f2f7f6;
+  --color-text-body: #d3dede;
+  --color-text-soft: #a9bcbf;
+  --color-text-tag: #bfd0d2;
+  --color-text-control: #cfe0e0;
+  --color-muted: #7f9599;
 
-  --color-line: #242320;
-  --color-line-strong: #45423d;
-  --color-line-faint: #1c1b19;
+  --color-accent: #49e0c0;
+  --color-accent-hover: #7defd4;
+  --color-accent-ink: #0f1b21;
+  --color-accent-glow: rgb(73 224 192 / 14%);
+  --color-highlight: #a98cf0;
+
+  --color-line: #22363f;
+  --color-line-soft: #1e313a;
+  --color-line-tag: #2a3f48;
+  --color-line-card: #2c4650;
+  --color-line-control: #2f4750;
+  --color-line-badge: #33505a;
+  --color-line-label: #35505a;
 
   --font-display: 'Anton', 'Archivo', 'Arial Narrow', sans-serif;
   --font-sans: 'Archivo', system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, monospace;
 
-  --gutter: clamp(14px, 3vw, 34px);
-  --section-pad: clamp(30px, 5vw, 72px);
-  --content-width: 44rem;
-  --title-size: clamp(24px, 3.2vw, 36px);
-  --portrait-size: clamp(120px, 36vw, 144px);
-  --radius: 6px;
-  --nav-height: 64px;
+  --gutter: clamp(16px, 4vw, 44px);
+  --section-pad: clamp(48px, 7vw, 96px);
+  --content-width: 1180px;
+  --title-size: clamp(32px, 5vw, 58px);
+  --nav-height: 72px;
 
   color-scheme: dark;
-}
-
-@media (max-width: 719.98px) {
-  :root {
-    --nav-height: 106px;
-  }
 }

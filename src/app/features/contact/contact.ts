@@ -1,10 +1,12 @@
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { SiteContent } from '../../core/data/content.model';
 import { PROFILE } from '../../core/data/profile';
+import { SectionHeading } from '../../shared/ui/section-heading';
 
 @Component({
   selector: 'app-contact',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [SectionHeading],
   templateUrl: './contact.html',
   styleUrl: './contact.scss',
 })

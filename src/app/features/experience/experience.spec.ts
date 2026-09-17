@@ -4,39 +4,29 @@ import { Experience } from './experience';
 
 describe('Experience', () => {
   it.each(['pt', 'en'] as const)(
-    'renders jobs in content order with their clients for %s',
+    'renders jobs in order with tech tags and highlights for %s',
     async (lang) => {
       const fixture = TestBed.createComponent(Experience);
       fixture.componentRef.setInput('experience', CONTENT[lang].experience);
       await fixture.whenStable();
       const el: HTMLElement = fixture.nativeElement;
-
       const jobs = CONTENT[lang].experience.jobs;
-      const roles = Array.from(el.querySelectorAll('.job-role')).map((n) => n.textContent);
-      expect(roles).toEqual(jobs.map((job) => job.role));
 
-      const clientLists = el.querySelectorAll('.clients');
-      expect(clientLists.length).toBe(jobs.filter((job) => job.clients.length > 0).length);
+      expect(Array.from(el.querySelectorAll('.job-role')).map((n) => n.textContent)).toEqual(
+        jobs.map((job) => job.role),
+      );
+      expect(Array.from(el.querySelectorAll('.job-org')).map((n) => n.textContent)).toEqual(
+        jobs.map((job) => `@${job.org}`),
+      );
 
-      const totalClients = jobs.reduce((sum, job) => sum + job.clients.length, 0);
-      expect(el.querySelectorAll('.client').length).toBe(totalClients);
-
-      for (const job of jobs) {
-        for (const client of job.clients) {
-          expect(el.textContent).toContain(client.name);
-          expect(el.textContent).toContain(client.product);
-          expect(el.textContent).toContain(client.role);
-          expect(el.textContent).toContain(client.stack);
-        }
-      }
-
-      expect(el.querySelectorAll('.clients a').length).toBe(0);
-
-      const internJob = jobs.at(2);
-      expect(internJob).toBeDefined();
-      expect(internJob?.clients.length).toBe(0);
-      const internClients = el.querySelectorAll('.job')[2]?.querySelectorAll('.clients');
-      expect(internClients?.length).toBe(0);
+      const rendered = el.querySelectorAll('.job');
+      jobs.forEach((job, i) => {
+        expect(rendered[i]?.querySelectorAll('.tag').length).toBe(job.tech.length);
+        expect(rendered[i]?.querySelectorAll('.job-highlights li').length).toBe(
+          job.highlights.length,
+        );
+      });
+      expect(rendered[2]?.querySelector('.job-highlights')).toBeNull();
     },
   );
 });

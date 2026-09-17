@@ -4,11 +4,11 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project
 
-Tarcisio Feletti's personal portfolio: a one-page, bilingual (PT at `/`, EN at `/en/`) site. Visual direction: the lean, recruiter-first "v4" (US-001, `docs/specs/US-001/TECH.md`) — one dark column, a single yellow accent, Anton only for the name and section titles, Archivo / JetBrains Mono elsewhere, no decorative animation. The earlier "film reel" v3 design (`design/portfolio-v3.dc.html`, gitignored) is historical reference only. Content comes from Tarcisio's CV.
+Tarcisio Feletti's personal portfolio: a one-page, bilingual (PT at `/`, EN at `/en/`) site. Visual source of truth: the Claude Design project "Portfolio Redesign" (`Portfolio Redesign.dc.html`) — dark petrol background, teal accent with purple highlights, card sections numbered [ 01 ]–[ 06 ], Anton / Archivo / JetBrains Mono. Content comes from Tarcisio's CV.
 
 ## Current state
 
-The design is fully implemented in Angular 22. Sections: sticky nav, hero (small portrait, name, role, value prop, CTAs), about (stats), stack, experience (client work nested per job), open-source (this portfolio), education, contact/footer. There is also a CSR not-found page. The GitHub Pages workflow is in place.
+The design is fully implemented in Angular 22. Sections: sticky nav (hamburger below 760px), hero (portrait, CTAs, highlights), about, stack, experience (#carreira), projects, education, contact/footer.
 
 Commands: `npm start`, `npm run lint`, `npm run test:ci` (Vitest), `npm run build` (prerender + `scripts/postbuild.mjs`). Requires Node 24 (`.nvmrc`). On Windows Git Bash, prefix commands that pass `/portifolio/` with `MSYS_NO_PATHCONV=1`. For a local Pages-like build: `SITE_URL=https://tarcisiofeletti.github.io/portifolio npm run build -- --base-href /portifolio/`.
 
@@ -23,16 +23,17 @@ Commands: `npm start`, `npm run lint`, `npm run test:ci` (Vitest), `npm run buil
   - Copy lives in `core/data/content.pt.ts` and `content.en.ts`, typed by `content.model.ts`. A spec enforces that both have identical shape.
   - Language-independent facts (email, social links) live in `core/data/profile.ts`. The phone number and the CV download are intentionally not published for now.
 - **Hosting:** GitHub Pages, deployed by GitHub Actions on push to `main`. PRs run format check, lint, test and build only.
-- **Styling:** SCSS + CSS custom-property tokens in `src/styles/tokens.css`. Global utilities in `src/styles.scss`: `.page`, `.eyebrow`, `.section-title`, `.skip-link`, `.visually-hidden`. The design is dark-only by intent, so there is no theme toggle.
-- **Assets:** `public/assets/portrait.webp` is a 320×320 color head-and-shoulders crop shown in a circle (source photo in `design/`).
+- **Styling:** SCSS + CSS custom-property tokens in `src/styles/tokens.css`. Global utilities in `src/styles.scss`: `.container`, `.section`/`.divided`, `.label`, `.tags`/`.tag`, `.pill`, `.skip-link`, `.visually-hidden`. The design is dark-only by intent, so there is no theme toggle.
+- **Assets:** `public/assets/portrait.webp` is a 600×600 color head-and-shoulders crop shown in a circle (source photo in `design/`).
 - **Lint/format:** angular-eslint (with template a11y rules) + Prettier. **Tests:** Vitest via `ng test`. **Package manager:** npm.
 
 ## Layout
 
 ```
 src/app/
+  shared/ui/     section-heading ([ NN ] kicker + title with highlight)
   core/          data/ (typed content + profile), seo/ (title, meta, canonical, hreflang)
-  features/      site-chrome (nav), hero, about, stack, experience, open-source,
+  features/      site-chrome (nav), hero, about, stack, experience, projects,
                  education, contact; index.ts is each feature's public surface
   pages/         portfolio (both languages), not-found
 src/styles/tokens.css
@@ -46,7 +47,7 @@ design/          local design reference (gitignored, not built)
 1. Static-only output; every real route is prerendered.
 2. Features never import other features; `shared/` and `core/` never import `features/` or `pages/`.
 3. SSR-safe: browser globals only inside `afterNextRender` or platform guards.
-4. Design tokens only; no hardcoded colors in components. The only accent is `--color-yellow` (links, primary CTA, dates, focus).
+4. Design tokens only; no hardcoded colors in components. Accents are `--color-accent` (teal: links, CTAs, labels, focus) and `--color-highlight` (purple: title highlights, numbers).
 5. Content lives in `core/data`, not in templates. Any new copy must be added to both PT and EN.
 6. Base-href-safe URLs (the site is served at `/<repo>/`). The base href is set in CI and never hardcoded.
    - In-page anchors use `routerLink` + `fragment`, not `href="#..."`.
