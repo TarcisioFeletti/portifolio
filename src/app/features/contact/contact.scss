@@ -8,22 +8,12 @@
   border-top: 1px solid var(--color-line);
 }
 
-.kicker {
+.eyebrow {
   margin-bottom: 18px;
-  font-size: 10px;
-  font-weight: 900;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--color-yellow);
 }
 
-.title {
+.section-title {
   margin-bottom: clamp(26px, 4vw, 48px);
-  font-family: var(--font-display);
-  font-weight: 400;
-  font-size: clamp(38px, 9vw, 130px);
-  line-height: 0.88;
-  text-transform: uppercase;
 }
 
 .channels {
@@ -52,9 +42,15 @@
   font-size: 15px;
   font-weight: 600;
   text-decoration: none;
-  border-bottom: 2px solid var(--color-yellow);
+  border-bottom: 2px solid var(--color-line-strong);
   color: var(--color-paper);
   overflow-wrap: anywhere;
+
+  &:hover,
+  &:focus-visible {
+    color: var(--color-yellow);
+    border-color: var(--color-yellow);
+  }
 }
 
 .profiles {

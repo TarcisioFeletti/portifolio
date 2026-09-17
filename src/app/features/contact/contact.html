@@ -1,6 +1,6 @@
 <footer id="contato" class="contact" aria-labelledby="contact-title">
-  <p class="kicker">{{ contact().kicker }}</p>
-  <h2 id="contact-title" class="title">{{ contact().title }}</h2>
+  <p class="eyebrow">{{ contact().kicker }}</p>
+  <h2 id="contact-title" class="section-title">{{ contact().title }}</h2>
 
   <dl class="channels">
     <div>
@@ -15,9 +15,9 @@
       <dt class="label">{{ contact().profilesLabel }}</dt>
       <dd class="profiles">
         @for (social of profile.socials; track social.url) {
-          <a class="channel" [href]="social.url" target="_blank" rel="noopener noreferrer"
-            >{{ social.label }} ↗</a
-          >
+          <a class="channel" [href]="social.url" target="_blank" rel="noopener noreferrer">{{
+            social.label
+          }}</a>
         }
       </dd>
     </div>
