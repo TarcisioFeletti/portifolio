@@ -30,6 +30,7 @@ export const CONTENT_PT: SiteContent = {
       'Mais de 4 anos construindo sistemas web com Java/Spring e Angular. Disponível para remoto e presencial na Grande Vitória.',
     portraitAlt: 'Retrato de Tarcisio Feletti',
     ctaMail: 'Falar comigo',
+    ctaCv: 'Baixar CV',
     highlights: [
       { value: '+4', label: 'anos de experiência' },
       { value: '04', label: 'setores atendidos' },

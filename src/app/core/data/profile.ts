@@ -13,6 +13,8 @@ export const PROFILE = {
   email: 'tarcisio.feletti@gmail.com',
   github: 'https://github.com/TarcisioFeletti',
   repo: 'https://github.com/TarcisioFeletti/portifolio',
+  cvPath: 'assets/tarcisio-feletti-cv.pdf',
+  cvFileName: 'Tarcisio-Feletti-CV.pdf',
   socials: SOCIALS,
   year: 2026,
 } as const;
