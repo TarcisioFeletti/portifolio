@@ -192,6 +192,7 @@ export const CONTENT_PT: SiteContent = {
     locationLabel: 'Onde estou',
     location:
       'Muniz Freire, ES. Disponível para remoto — aberto a híbrido ou presencial na Grande Vitória.',
+    ctaCv: 'Baixar CV',
     footerRole: 'Desenvolvedor Full Stack',
     sourceLabel: 'Código deste site',
   },

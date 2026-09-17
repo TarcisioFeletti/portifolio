@@ -19,11 +19,15 @@
         <div>
           <p class="label">{{ c.profilesLabel }}</p>
           <div class="profiles">
-            @for (social of profile.socials; track social.url) {
-              <a class="pill" [href]="social.url" target="_blank" rel="noopener noreferrer">{{
-                social.label
-              }}</a>
-            }
+            <a class="pill" [href]="linkedin.url" target="_blank" rel="noopener noreferrer">{{
+              linkedin.label
+            }}</a>
+            <a class="pill cta-cv" [href]="profile.cvPath" [attr.download]="profile.cvFileName">{{
+              c.ctaCv
+            }}</a>
+            <a class="pill" [href]="github.url" target="_blank" rel="noopener noreferrer">{{
+              github.label
+            }}</a>
           </div>
         </div>
       </div>

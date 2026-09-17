@@ -16,10 +16,14 @@ describe('Contact', () => {
       expect(hrefs).toEqual([
         `mailto:${PROFILE.email}`,
         PROFILE.socials[0].url,
+        PROFILE.cvPath,
         PROFILE.socials[1].url,
         PROFILE.repo,
       ]);
-      expect(el.querySelector('a[download]')).toBeNull();
+
+      const cv = el.querySelector('a.cta-cv');
+      expect(cv?.getAttribute('download')).toBe(PROFILE.cvFileName);
+      expect(cv?.textContent?.trim()).toBe(CONTENT[lang].contact.ctaCv);
 
       expect(el.textContent).toContain(CONTENT[lang].contact.location);
       expect(el.querySelector('.copyright')?.textContent).toContain(String(PROFILE.year));
