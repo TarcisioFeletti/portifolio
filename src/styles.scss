@@ -43,8 +43,8 @@ a:hover {
 }
 
 ::selection {
-  background: var(--color-pink);
-  color: var(--color-paper);
+  background: var(--color-yellow);
+  color: var(--color-ink);
 }
 
 :focus-visible {
@@ -52,45 +52,26 @@ a:hover {
   outline-offset: 3px;
 }
 
-.hud {
+.eyebrow {
   font-family: var(--font-mono);
-  font-size: 10px;
-  letter-spacing: 0.08em;
+  font-size: 12px;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--color-muted);
-}
-
-.ticks {
-  height: 9px;
-  background-image: repeating-linear-gradient(90deg, currentColor 0 1px, transparent 1px 13px);
-  opacity: 0.4;
-}
-
-/* Four L-shaped corner marks drawn with gradients, so no extra DOM is needed. */
-.corners {
-  --corner-size: 18px;
-  --corner-width: 1px;
-  --corner-color: var(--color-line-strong);
-  --c: linear-gradient(var(--corner-color), var(--corner-color));
-  background:
-    var(--c) top left / var(--corner-size) var(--corner-width),
-    var(--c) top left / var(--corner-width) var(--corner-size),
-    var(--c) top right / var(--corner-size) var(--corner-width),
-    var(--c) top right / var(--corner-width) var(--corner-size),
-    var(--c) bottom left / var(--corner-size) var(--corner-width),
-    var(--c) bottom left / var(--corner-width) var(--corner-size),
-    var(--c) bottom right / var(--corner-size) var(--corner-width),
-    var(--c) bottom right / var(--corner-width) var(--corner-size);
-  background-repeat: no-repeat;
-  pointer-events: none;
 }
 
 .section-title {
   font-family: var(--font-display);
   font-weight: 400;
   font-size: var(--title-size);
-  line-height: 0.94;
+  line-height: 1.05;
   text-transform: uppercase;
+}
+
+.page {
+  max-width: var(--content-width);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
 }
 
 .skip-link {

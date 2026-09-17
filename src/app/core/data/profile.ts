@@ -1,27 +1,18 @@
-import { Accent } from './content.model';
-
 export interface SocialLink {
   label: string;
   url: string;
-  accent: Accent;
 }
 
-const SOCIALS: SocialLink[] = [
-  {
-    label: 'LinkedIn',
-    url: 'https://www.linkedin.com/in/tarcisio-feletti-3b9923219',
-    accent: 'pink',
-  },
-  { label: 'GitHub', url: 'https://github.com/TarcisioFeletti', accent: 'orange' },
-  { label: 'Instagram', url: 'https://www.instagram.com/felettitarcisio/', accent: 'teal' },
+const SOCIALS: readonly [SocialLink, SocialLink] = [
+  { label: 'LinkedIn', url: 'https://www.linkedin.com/in/tarcisio-feletti-3b9923219' },
+  { label: 'GitHub', url: 'https://github.com/TarcisioFeletti' },
 ];
 
 export const PROFILE = {
   name: 'Tarcisio Feletti',
-  initials: 'TF',
   email: 'tarcisio.feletti@gmail.com',
   github: 'https://github.com/TarcisioFeletti',
-  githubLabel: 'github.com/TarcisioFeletti',
+  repo: 'https://github.com/TarcisioFeletti/portifolio',
   socials: SOCIALS,
   year: 2026,
 } as const;

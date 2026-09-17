@@ -1,30 +1,24 @@
+:host {
+  display: block;
+}
+
 .contact {
   display: block;
-  padding: clamp(34px, 5vw, 76px) var(--gutter) 26px;
+  padding-block: clamp(34px, 5vw, 76px) 26px;
   border-top: 1px solid var(--color-line);
 }
 
-.kicker {
+.eyebrow {
   margin-bottom: 18px;
-  font-size: 10px;
-  font-weight: 900;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--color-yellow);
 }
 
-.title {
+.section-title {
   margin-bottom: clamp(26px, 4vw, 48px);
-  font-family: var(--font-display);
-  font-weight: 400;
-  font-size: clamp(38px, 9vw, 130px);
-  line-height: 0.88;
-  text-transform: uppercase;
 }
 
 .channels {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(215px, 100%), 1fr));
+  display: flex;
+  flex-direction: column;
   gap: clamp(18px, 3vw, 36px);
   margin: 0;
   padding-top: clamp(20px, 3vw, 32px);
@@ -38,7 +32,7 @@
 .label {
   margin-bottom: 10px;
   font-size: 10px;
-  font-weight: 900;
+  font-weight: 800;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--color-muted);
@@ -48,9 +42,15 @@
   font-size: 15px;
   font-weight: 600;
   text-decoration: none;
-  border-bottom: 2px solid var(--channel-accent);
+  border-bottom: 2px solid var(--color-line-strong);
   color: var(--color-paper);
   overflow-wrap: anywhere;
+
+  &:hover,
+  &:focus-visible {
+    color: var(--color-yellow);
+    border-color: var(--color-yellow);
+  }
 }
 
 .profiles {
@@ -79,7 +79,7 @@
 
 .copyright {
   font-size: 11px;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--color-muted);

@@ -16,7 +16,8 @@ describe('App routes', () => {
     const harness = await RouterTestingHarness.create('/');
     const el = harness.routeNativeElement as HTMLElement;
 
-    expect(el.querySelector('h1')?.textContent).toContain('Desenvolvedor');
+    expect(el.querySelector('h1')?.textContent).toContain('Tarcisio Feletti');
+    expect(el.querySelector('.role')?.textContent).toContain('Desenvolvedor');
     expect(el.querySelector('.lang')?.textContent?.trim()).toBe('EN');
     expect(TestBed.inject(DOCUMENT).documentElement.lang).toBe('pt-BR');
   });
@@ -25,7 +26,8 @@ describe('App routes', () => {
     const harness = await RouterTestingHarness.create('/en');
     const el = harness.routeNativeElement as HTMLElement;
 
-    expect(el.querySelector('h1')?.textContent).toContain('Developer');
+    expect(el.querySelector('h1')?.textContent).toContain('Tarcisio Feletti');
+    expect(el.querySelector('.role')?.textContent).toContain('Developer');
     expect(el.querySelector('.lang')?.textContent?.trim()).toBe('PT');
     expect(TestBed.inject(DOCUMENT).documentElement.lang).toBe('en');
   });

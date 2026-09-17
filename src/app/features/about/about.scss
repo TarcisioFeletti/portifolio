@@ -1,53 +1,15 @@
-.marquee {
-  overflow: hidden;
-  margin: clamp(18px, 3vw, 34px) 0;
-  background: var(--color-yellow);
-  color: var(--color-ink);
-  border-block: 2px solid var(--color-ink);
-}
-
-.marquee-track {
-  display: flex;
-  width: max-content;
-  animation: marquee 26s linear infinite;
-
-  span {
-    font-family: var(--font-display);
-    font-size: clamp(26px, 4.6vw, 54px);
-    line-height: 1.24;
-    white-space: nowrap;
-    text-transform: uppercase;
-    letter-spacing: 0.01em;
-  }
-}
-
 .about {
-  padding: var(--section-pad) var(--gutter);
+  padding-block: var(--section-pad);
 }
 
 .columns {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(290px, 100%), 1fr));
+  display: flex;
+  flex-direction: column;
   gap: clamp(22px, 4vw, 56px);
 }
 
-.kicker {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
+.eyebrow {
   margin-bottom: 16px;
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--color-pink);
-}
-
-.dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: currentColor;
 }
 
 .body {
@@ -71,11 +33,15 @@
 
 .stats {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(170px, 100%), 1fr));
+  grid-template-columns: 1fr;
   gap: 1px;
   margin: clamp(26px, 4vw, 52px) 0 0;
   background: var(--color-line);
   border: 1px solid var(--color-line);
+
+  @media (min-width: 480px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .stat {
@@ -88,8 +54,10 @@
 
 .stat-value {
   margin: 0;
-  font-family: var(--font-display);
-  font-size: clamp(38px, 5vw, 62px);
+  color: var(--color-paper);
+  font-family: var(--font-sans);
+  font-weight: 800;
+  font-size: clamp(30px, 4vw, 44px);
   line-height: 1;
   font-variant-numeric: tabular-nums;
 }
@@ -97,14 +65,8 @@
 .stat-label {
   margin-top: 8px;
   font-size: 11px;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--color-muted);
-}
-
-@keyframes marquee {
-  to {
-    transform: translateX(-50%);
-  }
 }

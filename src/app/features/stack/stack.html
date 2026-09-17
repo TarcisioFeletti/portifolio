@@ -1,24 +1,18 @@
 <section id="stack" class="stack" aria-labelledby="stack-title">
-  <app-section-header index="02" [reel]="stack().reel" />
   <div class="heading">
     <h2 id="stack-title" class="section-title">{{ stack().title }}</h2>
     <p class="note">{{ stack().note }}</p>
   </div>
 
-  <ul class="chips" role="list">
-    @for (chip of chips(); track chip.label) {
-      <li class="chip" [style.background]="chip.accent | accent" [style.transform]="chip.rotation">
-        <span class="chip-num" aria-hidden="true">{{ chip.num }}</span
-        >{{ chip.label }}
-      </li>
-    }
-  </ul>
-
   <div class="groups">
     @for (group of stack().groups; track group.title) {
       <div class="group">
         <h3 class="group-title">{{ group.title }}</h3>
-        <p class="group-items">{{ group.items }}</p>
+        <ul class="tags" role="list">
+          @for (item of group.items; track item) {
+            <li class="tag">{{ item }}</li>
+          }
+        </ul>
       </div>
     }
   </div>

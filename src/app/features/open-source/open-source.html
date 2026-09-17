@@ -1,0 +1,9 @@
+<section id="codigo" class="open-source" aria-labelledby="open-source-title">
+  <h2 id="open-source-title" class="section-title title">{{ openSource().title }}</h2>
+  <h3 class="name">{{ openSource().name }}</h3>
+  <p class="body">{{ openSource().body }}</p>
+  <p class="stack">{{ openSource().stack }}</p>
+  <a class="cta" [href]="profile.repo" target="_blank" rel="noopener noreferrer">
+    {{ openSource().cta }} <span aria-hidden="true">↗</span>
+  </a>
+</section>

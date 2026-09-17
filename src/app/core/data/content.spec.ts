@@ -30,4 +30,38 @@ describe('site content', () => {
     expect(canonicalPath('pt')).toBe('/');
     expect(canonicalPath('en')).toBe('/en/');
   });
+
+  it.each(['pt', 'en'] as const)(
+    'orders jobs from newest to oldest and formats periods in %s (RN-04)',
+    (lang) => {
+      const jobs = CONTENT[lang].experience.jobs;
+      const periodPattern = /^\d{2}\/\d{4} — \d{2}\/\d{4}$/;
+      for (const job of jobs) {
+        expect(job.period).toMatch(periodPattern);
+      }
+
+      const startTimes = jobs.map((job) => {
+        const match = /^(\d{2})\/(\d{4})/.exec(job.period);
+        const [, month, year] = match ?? [];
+        return new Date(Number(year), Number(month) - 1).getTime();
+      });
+      const sorted = [...startTimes].sort((a, b) => b - a);
+      expect(startTimes).toEqual(sorted);
+    },
+  );
+
+  it.each(['pt', 'en'] as const)('lists the Optsolv and Itix FS clients in %s', (lang) => {
+    const optsolv = CONTENT[lang].experience.jobs.find((job) => job.org === 'Optsolv');
+    const itixFs = CONTENT[lang].experience.jobs.find(
+      (job) => job.org === 'Itix' && job.clients.length > 0,
+    );
+    expect(optsolv?.clients.map((client) => client.name)).toEqual([
+      'ArcelorMittal',
+      'WeDo / Comunify',
+    ]);
+    expect(itixFs?.clients.map((client) => client.name)).toEqual([
+      'Unimed Goiânia',
+      'Risch Law Firm',
+    ]);
+  });
 });
