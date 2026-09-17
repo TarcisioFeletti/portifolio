@@ -17,14 +17,15 @@
 
       <div class="ctas">
         <a class="cta-primary" [href]="'mailto:' + profile.email">{{ hero().ctaMail }}</a>
+        <a class="cta" [href]="linkedin.url" target="_blank" rel="noopener noreferrer">{{
+          linkedin.label
+        }}</a>
         <a class="cta cta-cv" [href]="profile.cvPath" [attr.download]="profile.cvFileName">{{
           hero().ctaCv
         }}</a>
-        @for (social of profile.socials; track social.url) {
-          <a class="cta" [href]="social.url" target="_blank" rel="noopener noreferrer">{{
-            social.label
-          }}</a>
-        }
+        <a class="cta" [href]="github.url" target="_blank" rel="noopener noreferrer">{{
+          github.label
+        }}</a>
       </div>
 
       <ul class="highlights">

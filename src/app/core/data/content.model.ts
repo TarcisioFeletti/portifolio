@@ -73,6 +73,7 @@ export interface SiteContent {
     profilesLabel: string;
     locationLabel: string;
     location: string;
+    ctaCv: string;
     footerRole: string;
     sourceLabel: string;
   };

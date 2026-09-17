@@ -14,4 +14,6 @@ export class Contact {
   readonly contact = input.required<SiteContent['contact']>();
 
   protected readonly profile = PROFILE;
+  protected readonly linkedin = PROFILE.socials[0];
+  protected readonly github = PROFILE.socials[1];
 }

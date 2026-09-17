@@ -192,6 +192,7 @@ export const CONTENT_EN: SiteContent = {
     locationLabel: 'Based in',
     location:
       'Muniz Freire, ES, Brazil. Available for remote — open to hybrid or on-site in Greater Vitória.',
+    ctaCv: 'Download CV',
     footerRole: 'Full Stack Developer',
     sourceLabel: 'Source of this site',
   },

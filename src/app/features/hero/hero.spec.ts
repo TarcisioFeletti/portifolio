@@ -22,7 +22,7 @@ describe('Hero', () => {
   );
 
   it.each(['pt', 'en'] as const)(
-    'puts the mail CTA first, then the CV download, LinkedIn and GitHub for %s',
+    'puts the mail CTA first, then LinkedIn, the CV download and GitHub for %s',
     async (lang) => {
       const fixture = TestBed.createComponent(Hero);
       fixture.componentRef.setInput('hero', CONTENT[lang].hero);
@@ -36,8 +36,8 @@ describe('Hero', () => {
       const hrefs = Array.from(el.querySelectorAll('.ctas a')).map((a) => a.getAttribute('href'));
       expect(hrefs).toEqual([
         `mailto:${PROFILE.email}`,
-        PROFILE.cvPath,
         PROFILE.socials[0].url,
+        PROFILE.cvPath,
         PROFILE.socials[1].url,
       ]);
 
