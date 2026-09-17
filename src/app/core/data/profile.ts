@@ -1,18 +1,11 @@
-import { Accent } from './content.model';
-
 export interface SocialLink {
   label: string;
   url: string;
-  accent: Accent;
 }
 
 const SOCIALS: SocialLink[] = [
-  {
-    label: 'LinkedIn',
-    url: 'https://www.linkedin.com/in/tarcisio-feletti-3b9923219',
-    accent: 'pink',
-  },
-  { label: 'GitHub', url: 'https://github.com/TarcisioFeletti', accent: 'orange' },
+  { label: 'LinkedIn', url: 'https://www.linkedin.com/in/tarcisio-feletti-3b9923219' },
+  { label: 'GitHub', url: 'https://github.com/TarcisioFeletti' },
 ];
 
 export const PROFILE = {

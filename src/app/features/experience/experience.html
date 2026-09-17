@@ -3,7 +3,7 @@
 
   <ol class="jobs" role="list">
     @for (job of experience().jobs; track job.period; let i = $index) {
-      <li class="job" [style.--job-accent]="accentFor(i) | accent">
+      <li class="job">
         <div>
           <div class="job-meta">
             <span class="job-num" aria-hidden="true">{{ numberFor(i) }}</span>

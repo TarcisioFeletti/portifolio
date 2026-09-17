@@ -1,10 +1,6 @@
 .projects {
   padding: var(--section-pad) var(--gutter);
   background-color: var(--color-paper);
-  background-image:
-    linear-gradient(var(--color-grid-ink-soft) 1px, transparent 1px),
-    linear-gradient(90deg, var(--color-grid-ink-soft) 1px, transparent 1px);
-  background-size: var(--grid-size) var(--grid-size);
   color: var(--color-ink);
 }
 
@@ -21,7 +17,7 @@
   max-width: 42ch;
   font-size: 13px;
   line-height: 1.6;
-  color: var(--color-paper-muted);
+  color: var(--color-ink);
 }
 
 .cards {
@@ -47,7 +43,7 @@
   padding: clamp(20px, 2.4vw, 28px) clamp(20px, 2.4vw, 28px) clamp(20px, 2.4vw, 28px)
     clamp(30px, 3.4vw, 40px);
   border-radius: var(--radius);
-  border-bottom: 6px solid var(--card-accent);
+  border-bottom: 6px solid var(--color-yellow);
   background: var(--color-ink);
   color: var(--color-paper);
 
@@ -78,18 +74,17 @@
     );
   }
 
-  > :not(.card-marks) {
+  > * {
     position: relative;
   }
 }
 
-.card-marks {
-  --corner-size: 12px;
-  position: absolute;
-  inset: 12px 12px 14px 22px;
-}
-
 .card-hud {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-muted);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -97,7 +92,7 @@
 }
 
 .fps {
-  color: var(--card-accent);
+  color: var(--color-yellow);
 }
 
 .card-row {
@@ -111,7 +106,7 @@
   display: inline-block;
   border-radius: 999px;
   padding: 5px 11px;
-  background: var(--card-accent);
+  background: var(--color-yellow);
   color: var(--color-ink);
   font-size: 9px;
   font-weight: 900;
@@ -122,7 +117,7 @@
 .card-num {
   font-family: var(--font-display);
   font-size: 15px;
-  color: var(--color-hud-dim);
+  color: var(--color-muted);
   font-variant-numeric: tabular-nums;
 }
 
@@ -172,7 +167,7 @@
   text-decoration: none;
 
   &:hover {
-    background: var(--color-pink);
+    background: var(--color-yellow);
     color: var(--color-ink);
   }
 
@@ -184,5 +179,5 @@
 .github {
   font-size: 13px;
   font-weight: 600;
-  color: var(--color-paper-muted);
+  color: var(--color-ink);
 }

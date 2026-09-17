@@ -39,9 +39,9 @@ export const CONTENT_EN: SiteContent = {
       'On the back end, I build REST APIs in Spring Boot with tests from the start (TDD) and clean code. I have also set up CI/CD pipelines and used Docker and AWS in deliveries.',
     ],
     stats: [
-      { value: '+4', label: 'years building web applications', accent: 'teal' },
-      { value: '04', label: 'industries: healthcare, steel, HR, legal', accent: 'yellow' },
-      { value: '04', label: 'systems delivered for corporate clients', accent: 'orange' },
+      { value: '+4', label: 'years building web applications' },
+      { value: '04', label: 'industries: healthcare, steel, HR, legal' },
+      { value: '04', label: 'systems delivered for corporate clients' },
     ],
   },
   stack: {

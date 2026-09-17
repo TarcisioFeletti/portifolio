@@ -6,11 +6,7 @@
     <div>
       <dt class="label">{{ contact().emailLabel }}</dt>
       <dd>
-        <a
-          class="channel"
-          [style.--channel-accent]="'yellow' | accent"
-          [href]="'mailto:' + profile.email"
-        >
+        <a class="channel" [href]="'mailto:' + profile.email">
           {{ profile.email }}
         </a>
       </dd>
@@ -19,12 +15,7 @@
       <dt class="label">{{ contact().profilesLabel }}</dt>
       <dd class="profiles">
         @for (social of profile.socials; track social.url) {
-          <a
-            class="channel"
-            [style.--channel-accent]="social.accent | accent"
-            [href]="social.url"
-            target="_blank"
-            rel="noopener noreferrer"
+          <a class="channel" [href]="social.url" target="_blank" rel="noopener noreferrer"
             >{{ social.label }} ↗</a
           >
         }

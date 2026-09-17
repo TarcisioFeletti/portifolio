@@ -7,9 +7,8 @@
   <ul class="cards" role="list">
     @for (project of projects().items; track project.name; let i = $index) {
       <li>
-        <article class="card" [style.--card-accent]="accentFor(i) | accent">
-          <div class="card-marks corners" aria-hidden="true"></div>
-          <div class="hud card-hud" aria-hidden="true">
+        <article class="card">
+          <div class="card-hud" aria-hidden="true">
             <span>Scn {{ numberFor(i) }} · {{ projects().takeLabel }}</span>
             <span class="fps">25 fps</span>
           </div>

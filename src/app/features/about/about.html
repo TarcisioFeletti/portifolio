@@ -1,7 +1,7 @@
 <section id="sobre" class="about" aria-labelledby="about-title">
   <div class="columns">
     <div>
-      <p class="kicker"><span class="dot" aria-hidden="true"></span>{{ about().kicker }}</p>
+      <p class="eyebrow">{{ about().kicker }}</p>
       <h2 id="about-title" class="section-title">{{ about().title }}</h2>
     </div>
     <div class="body">
@@ -15,7 +15,7 @@
     @for (stat of about().stats; track stat.label) {
       <div class="stat">
         <dt class="stat-label">{{ stat.label }}</dt>
-        <dd class="stat-value" [style.color]="stat.accent | accent">{{ stat.value }}</dd>
+        <dd class="stat-value">{{ stat.value }}</dd>
       </div>
     }
   </dl>

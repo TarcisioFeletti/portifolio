@@ -8,7 +8,7 @@ import { SeoService } from '../../core/seo/seo.service';
   imports: [RouterLink],
   template: `
     <main class="not-found" aria-labelledby="nf-title">
-      <p class="hud">Erro 404 · cena não encontrada</p>
+      <p class="eyebrow">Erro 404 · cena não encontrada</p>
       <h1 id="nf-title" class="title">Página não encontrada</h1>
       <p class="body">O endereço acessado não existe ou foi movido.</p>
       <a class="back" routerLink="/">Voltar para o início →</a>

@@ -1,11 +1,8 @@
 export type Lang = 'pt' | 'en';
 
-export type Accent = 'yellow' | 'teal' | 'pink' | 'orange' | 'green' | 'paper';
-
 export interface Stat {
   value: string;
   label: string;
-  accent: Accent;
 }
 
 export interface SkillGroup {

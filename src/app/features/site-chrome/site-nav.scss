@@ -12,7 +12,7 @@
   gap: 16px;
   flex-wrap: wrap;
   padding: 14px var(--gutter);
-  background: rgb(12 12 12 / 92%);
+  background: var(--color-ink-glass);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--color-line);
 }

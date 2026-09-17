@@ -6,7 +6,7 @@
 
   <ul class="chips" role="list">
     @for (chip of chips(); track chip.label) {
-      <li class="chip" [style.background]="chip.accent | accent" [style.transform]="chip.rotation">
+      <li class="chip">
         <span class="chip-num" aria-hidden="true">{{ chip.num }}</span
         >{{ chip.label }}
       </li>
