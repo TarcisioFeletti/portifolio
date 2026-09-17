@@ -30,6 +30,7 @@ export const CONTENT_EN: SiteContent = {
       '4+ years building web systems with Java/Spring and Angular. Available for remote work and on-site in Greater Vitória.',
     portraitAlt: 'Portrait of Tarcisio Feletti',
     ctaMail: 'Get in touch',
+    ctaCv: 'Download CV',
     highlights: [
       { value: '+4', label: 'years of experience' },
       { value: '04', label: 'industries served' },

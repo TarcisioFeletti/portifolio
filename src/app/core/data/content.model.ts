@@ -50,6 +50,7 @@ export interface SiteContent {
     valueProp: string;
     portraitAlt: string;
     ctaMail: string;
+    ctaCv: string;
     highlights: Stat[];
   };
   about: { kicker: string; title: SectionTitle; paragraphs: string[]; stats: Stat[] };
