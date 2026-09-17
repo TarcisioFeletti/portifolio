@@ -1,0 +1,45 @@
+.open-source {
+  padding: var(--section-pad) var(--gutter);
+  border-top: 1px solid var(--color-line);
+}
+
+.title {
+  margin-bottom: clamp(18px, 3vw, 32px);
+}
+
+.name {
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--color-paper);
+}
+
+.body {
+  max-width: 60ch;
+  margin-bottom: 12px;
+  font-size: 15px;
+  line-height: 1.66;
+  color: var(--color-text-strong);
+}
+
+.stack {
+  margin-bottom: 20px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--color-muted);
+}
+
+.cta {
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: var(--color-paper);
+  text-decoration: none;
+  border-bottom: 2px solid var(--color-yellow);
+  padding-bottom: 3px;
+
+  &:hover {
+    color: var(--color-yellow);
+  }
+}

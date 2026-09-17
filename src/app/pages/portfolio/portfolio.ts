@@ -7,14 +7,14 @@ import { Contact } from '../../features/contact';
 import { Education } from '../../features/education';
 import { Experience } from '../../features/experience';
 import { Hero } from '../../features/hero';
-import { Projects } from '../../features/projects';
+import { OpenSource } from '../../features/open-source';
 import { SiteNav } from '../../features/site-chrome';
 import { Stack } from '../../features/stack';
 
 @Component({
   selector: 'app-portfolio',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [SiteNav, Hero, About, Stack, Experience, Projects, Education, Contact],
+  imports: [SiteNav, Hero, About, Stack, Experience, OpenSource, Education, Contact],
   templateUrl: './portfolio.html',
 })
 export default class Portfolio {

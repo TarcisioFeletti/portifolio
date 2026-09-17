@@ -20,7 +20,8 @@ describe('SiteNav', () => {
     expect(el.querySelector('.brand-badge')).toBeNull();
 
     const links = Array.from(el.querySelectorAll('.link'));
-    expect(links.length).toBe(CONTENT[lang].nav.sections.length);
+    expect(links.length).toBe(4);
+    expect(links.some((link) => link.getAttribute('href')?.includes('projetos'))).toBe(false);
     for (const link of links) {
       expect(link.getAttribute('href')).toMatch(/#[a-z]+$/);
     }

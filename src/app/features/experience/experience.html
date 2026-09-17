@@ -2,13 +2,10 @@
   <h2 id="experience-title" class="section-title title">{{ experience().title }}</h2>
 
   <ol class="jobs" role="list">
-    @for (job of experience().jobs; track job.period; let i = $index) {
+    @for (job of experience().jobs; track job.period) {
       <li class="job">
         <div>
-          <div class="job-meta">
-            <span class="job-num" aria-hidden="true">{{ numberFor(i) }}</span>
-            <span class="job-period">{{ job.period }}</span>
-          </div>
+          <span class="job-period">{{ job.period }}</span>
           <h3 class="job-role">{{ job.role }}</h3>
           <p class="job-org">{{ job.org }}</p>
           <p class="job-place">{{ job.place }}</p>
@@ -16,12 +13,15 @@
         </div>
         <div class="job-body">
           <p class="job-summary">{{ job.summary }}</p>
-          @if (job.highlights.length) {
-            <ul class="highlights" role="list">
-              @for (highlight of job.highlights; track $index) {
-                <li class="highlight">
-                  <span class="slash" aria-hidden="true">/</span>
-                  <p>{{ highlight }}</p>
+          @if (job.clients.length) {
+            <ul class="clients" role="list" [attr.aria-label]="experience().clientsLabel">
+              @for (client of job.clients; track client.name) {
+                <li class="client">
+                  <p class="client-sector eyebrow">{{ client.sector }}</p>
+                  <h4 class="client-name">{{ client.name }}</h4>
+                  <p class="client-product">{{ client.product }}</p>
+                  <p class="client-role">{{ client.role }}</p>
+                  <p class="client-stack">{{ client.stack }}</p>
                 </li>
               }
             </ul>

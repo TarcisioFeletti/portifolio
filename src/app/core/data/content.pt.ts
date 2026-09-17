@@ -16,7 +16,6 @@ export const CONTENT_PT: SiteContent = {
       { id: 'sobre', label: 'Sobre' },
       { id: 'stack', label: 'Stack' },
       { id: 'experiencia', label: 'Experiência' },
-      { id: 'projetos', label: 'Projetos' },
       { id: 'contato', label: 'Contato' },
     ],
     switchLabel: 'EN',
@@ -80,6 +79,7 @@ export const CONTENT_PT: SiteContent = {
   },
   experience: {
     title: 'Experiência',
+    clientsLabel: 'Clientes',
     jobs: [
       {
         role: 'Desenvolvedor de Software',
@@ -89,9 +89,23 @@ export const CONTENT_PT: SiteContent = {
         stack: 'Java · Spring · Angular · TypeScript · SQL',
         summary:
           'Desenvolvimento de sistemas para clientes corporativos, com responsabilidade técnica sobre o front-end e contribuição no back-end em Java e Spring Boot.',
-        highlights: [
-          'ArcelorMittal — migração de um sistema interno legado em WPF (.NET) para uma aplicação web moderna em Angular, usando desenvolvimento assistido por IA para acelerar a modernização mantendo a qualidade do código.',
-          'WeDo / Comunify — responsável principal pelo front-end em Angular, respondendo por praticamente todas as decisões técnicas do front. No back-end em Java e Spring Boot, construí APIs REST com TDD e testes automatizados.',
+        clients: [
+          {
+            name: 'ArcelorMittal',
+            sector: 'Indústria',
+            product:
+              'Sistema interno, antes em desktop (WPF/.NET), reconstruído como aplicação web.',
+            role: 'Migração do sistema legado para uma aplicação web moderna em Angular, usando desenvolvimento assistido por IA para acelerar a modernização mantendo a qualidade do código.',
+            stack: 'Angular · TypeScript · Spring',
+          },
+          {
+            name: 'WeDo / Comunify',
+            sector: 'RH & engajamento',
+            product:
+              'Plataforma de RH e engajamento de colaboradores: posts internos, gamificação e integrações com parceiros da marca.',
+            role: 'Responsável principal pelo front-end em Angular, respondendo por praticamente todas as decisões técnicas do front. No back-end em Java e Spring Boot, construí APIs REST com TDD e testes automatizados.',
+            stack: 'Angular · Spring Boot · TDD',
+          },
         ],
       },
       {
@@ -102,9 +116,23 @@ export const CONTENT_PT: SiteContent = {
         stack: 'Java · Spring · Angular · TypeScript · SQL',
         summary:
           'Desenvolvimento de aplicações web full stack para clientes da empresa, com participação em decisões técnicas e nas publicações.',
-        highlights: [
-          'Unimed Goiânia (saúde) — desenvolvimento completo de um sistema de agendamento de consultas em Angular e Spring. Em uma fase do projeto atuei como único desenvolvedor, assumindo as decisões técnicas e a responsabilidade pelas publicações.',
-          'Risch Law Firm (jurídico/imigração) — desenvolvimento, como dev Angular + Spring, de todo o sistema de organização de processos e operações do escritório.',
+        clients: [
+          {
+            name: 'Unimed Goiânia',
+            sector: 'Saúde',
+            product:
+              'Agendamento de consultas médicas para uma operadora de saúde, do banco de dados à interface.',
+            role: 'Desenvolvimento completo do sistema em Angular e Spring. Em uma fase do projeto atuei como único desenvolvedor, assumindo as decisões técnicas e a responsabilidade pelas publicações.',
+            stack: 'Angular · Spring · SQL',
+          },
+          {
+            name: 'Risch Law Firm',
+            sector: 'Jurídico',
+            product:
+              'Organização de processos e operações de um escritório de advocacia de imigração.',
+            role: 'Desenvolvimento, como dev Angular + Spring, de todo o sistema.',
+            stack: 'Angular · Spring · SQL',
+          },
         ],
       },
       {
@@ -115,41 +143,16 @@ export const CONTENT_PT: SiteContent = {
         stack: 'Java · Spring · Angular',
         summary:
           'Primeiro contato profissional com desenvolvimento de software, apoiando o time em tarefas de desenvolvimento e correções, com aplicação prática de Java, Spring e Angular.',
-        highlights: [],
+        clients: [],
       },
     ],
   },
-  projects: {
-    title: 'Projetos em destaque',
-    note: 'Sistemas de clientes corporativos. Código e telas não são públicos.',
-    cta: 'Ver meu GitHub',
-    takeLabel: 'take 01',
-    items: [
-      {
-        sector: 'Indústria',
-        name: 'ArcelorMittal',
-        body: 'Sistema interno, antes em desktop (WPF/.NET), reconstruído como aplicação web.',
-        stack: 'Angular · TypeScript · Spring',
-      },
-      {
-        sector: 'RH & engajamento',
-        name: 'WeDo / Comunify',
-        body: 'Plataforma de RH e engajamento de colaboradores: posts internos, gamificação e integrações com parceiros da marca.',
-        stack: 'Angular · Spring Boot · TDD',
-      },
-      {
-        sector: 'Saúde',
-        name: 'Unimed Goiânia',
-        body: 'Agendamento de consultas médicas para uma operadora de saúde, do banco de dados à interface.',
-        stack: 'Angular · Spring · SQL',
-      },
-      {
-        sector: 'Jurídico',
-        name: 'Risch Law Firm',
-        body: 'Organização de processos e operações de um escritório de advocacia de imigração.',
-        stack: 'Angular · Spring · SQL',
-      },
-    ],
+  openSource: {
+    title: 'Projeto público',
+    name: 'Este portfólio',
+    body: 'Site bilíngue estático em Angular 22, pré-renderizado e publicado no GitHub Pages via GitHub Actions.',
+    stack: 'Angular 22 · SSG · GitHub Pages',
+    cta: 'Ver o código no GitHub',
   },
   education: {
     kicker: 'Formação',

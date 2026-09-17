@@ -16,7 +16,6 @@ export const CONTENT_EN: SiteContent = {
       { id: 'sobre', label: 'About' },
       { id: 'stack', label: 'Stack' },
       { id: 'experiencia', label: 'Experience' },
-      { id: 'projetos', label: 'Work' },
       { id: 'contato', label: 'Contact' },
     ],
     switchLabel: 'PT',
@@ -80,6 +79,7 @@ export const CONTENT_EN: SiteContent = {
   },
   experience: {
     title: 'Experience',
+    clientsLabel: 'Clients',
     jobs: [
       {
         role: 'Software Developer',
@@ -89,9 +89,23 @@ export const CONTENT_EN: SiteContent = {
         stack: 'Java · Spring · Angular · TypeScript · SQL',
         summary:
           'Systems for corporate clients, with technical ownership of the front end and back-end work in Java and Spring Boot.',
-        highlights: [
-          'ArcelorMittal — migrated a legacy internal WPF (.NET) system to a modern Angular web application, using AI-assisted development to speed up modernisation while keeping code quality.',
-          'WeDo / Comunify — lead front-end developer (Angular), answering for nearly all front-end technical decisions. On the Java and Spring Boot back end, built REST APIs with TDD and automated tests.',
+        clients: [
+          {
+            name: 'ArcelorMittal',
+            sector: 'Steel industry',
+            product:
+              'An internal system, formerly desktop (WPF/.NET), rebuilt as a web application.',
+            role: 'Migrated the legacy system to a modern Angular web application, using AI-assisted development to speed up modernisation while keeping code quality.',
+            stack: 'Angular · TypeScript · Spring',
+          },
+          {
+            name: 'WeDo / Comunify',
+            sector: 'HR & engagement',
+            product:
+              'HR and employee-engagement platform: internal posts, gamification and brand-partner integrations.',
+            role: 'Lead front-end developer (Angular), answering for nearly all front-end technical decisions. On the Java and Spring Boot back end, built REST APIs with TDD and automated tests.',
+            stack: 'Angular · Spring Boot · TDD',
+          },
         ],
       },
       {
@@ -102,9 +116,22 @@ export const CONTENT_EN: SiteContent = {
         stack: 'Java · Spring · Angular · TypeScript · SQL',
         summary:
           "Full stack web application development for the company's clients, taking part in technical decisions and releases.",
-        highlights: [
-          'Unimed Goiânia (healthcare) — built a medical appointment scheduling system end to end in Angular and Spring. At one project stage I was the only developer, owning the technical decisions and the releases.',
-          "Risch Law Firm (legal/immigration) — as the Angular + Spring developer, built the firm's entire case and operations management system.",
+        clients: [
+          {
+            name: 'Unimed Goiânia',
+            sector: 'Healthcare',
+            product:
+              'Medical appointment scheduling for a healthcare provider, from database to interface.',
+            role: 'Built the system end to end in Angular and Spring. At one project stage I was the only developer, owning the technical decisions and the releases.',
+            stack: 'Angular · Spring · SQL',
+          },
+          {
+            name: 'Risch Law Firm',
+            sector: 'Legal',
+            product: 'Case and operations management for an immigration law firm.',
+            role: "As the Angular + Spring developer, built the firm's entire system.",
+            stack: 'Angular · Spring · SQL',
+          },
         ],
       },
       {
@@ -115,41 +142,16 @@ export const CONTENT_EN: SiteContent = {
         stack: 'Java · Spring · Angular',
         summary:
           'My first professional experience in software development, supporting the team with development tasks and fixes, applying Java, Spring and Angular in practice.',
-        highlights: [],
+        clients: [],
       },
     ],
   },
-  projects: {
-    title: 'Selected work',
-    note: 'Systems for corporate clients. Code and screens are not public.',
-    cta: 'Visit my GitHub',
-    takeLabel: 'take 01',
-    items: [
-      {
-        sector: 'Steel industry',
-        name: 'ArcelorMittal',
-        body: 'An internal system, formerly desktop (WPF/.NET), rebuilt as a web application.',
-        stack: 'Angular · TypeScript · Spring',
-      },
-      {
-        sector: 'HR & engagement',
-        name: 'WeDo / Comunify',
-        body: 'HR and employee-engagement platform: internal posts, gamification and brand-partner integrations.',
-        stack: 'Angular · Spring Boot · TDD',
-      },
-      {
-        sector: 'Healthcare',
-        name: 'Unimed Goiânia',
-        body: 'Medical appointment scheduling for a healthcare provider, from database to interface.',
-        stack: 'Angular · Spring · SQL',
-      },
-      {
-        sector: 'Legal',
-        name: 'Risch Law Firm',
-        body: 'Case and operations management for an immigration law firm.',
-        stack: 'Angular · Spring · SQL',
-      },
-    ],
+  openSource: {
+    title: 'Public project',
+    name: 'This portfolio',
+    body: 'Bilingual static site in Angular 22, prerendered and deployed to GitHub Pages with GitHub Actions.',
+    stack: 'Angular 22 · SSG · GitHub Pages',
+    cta: 'View the code on GitHub',
   },
   education: {
     kicker: 'Education',

@@ -30,4 +30,19 @@ describe('site content', () => {
     expect(canonicalPath('pt')).toBe('/');
     expect(canonicalPath('en')).toBe('/en/');
   });
+
+  it.each(['pt', 'en'] as const)('lists the Optsolv and Itix FS clients in %s', (lang) => {
+    const optsolv = CONTENT[lang].experience.jobs.find((job) => job.org === 'Optsolv');
+    const itixFs = CONTENT[lang].experience.jobs.find(
+      (job) => job.org === 'Itix' && job.clients.length > 0,
+    );
+    expect(optsolv?.clients.map((client) => client.name)).toEqual([
+      'ArcelorMittal',
+      'WeDo / Comunify',
+    ]);
+    expect(itixFs?.clients.map((client) => client.name)).toEqual([
+      'Unimed Goiânia',
+      'Risch Law Firm',
+    ]);
+  });
 });

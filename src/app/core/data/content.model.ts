@@ -10,6 +10,14 @@ export interface SkillGroup {
   items: string;
 }
 
+export interface ClientWork {
+  name: string;
+  sector: string;
+  product: string;
+  role: string;
+  stack: string;
+}
+
 export interface Job {
   role: string;
   org: string;
@@ -17,14 +25,7 @@ export interface Job {
   period: string;
   stack: string;
   summary: string;
-  highlights: string[];
-}
-
-export interface Project {
-  sector: string;
-  name: string;
-  body: string;
-  stack: string;
+  clients: ClientWork[];
 }
 
 export interface Education {
@@ -57,14 +58,8 @@ export interface SiteContent {
     stats: Stat[];
   };
   stack: { title: string; note: string; skills: string[]; groups: SkillGroup[] };
-  experience: { title: string; jobs: Job[] };
-  projects: {
-    title: string;
-    note: string;
-    cta: string;
-    takeLabel: string;
-    items: Project[];
-  };
+  experience: { title: string; clientsLabel: string; jobs: Job[] };
+  openSource: { title: string; name: string; body: string; stack: string; cta: string };
   education: {
     kicker: string;
     title: string;

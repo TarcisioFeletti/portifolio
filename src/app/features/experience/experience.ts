@@ -9,8 +9,4 @@ import { SiteContent } from '../../core/data/content.model';
 })
 export class Experience {
   readonly experience = input.required<SiteContent['experience']>();
-
-  protected numberFor(index: number): string {
-    return String(index + 1).padStart(2, '0');
-  }
 }

@@ -12,7 +12,7 @@ export const PROFILE = {
   name: 'Tarcisio Feletti',
   email: 'tarcisio.feletti@gmail.com',
   github: 'https://github.com/TarcisioFeletti',
-  githubLabel: 'github.com/TarcisioFeletti',
+  repo: 'https://github.com/TarcisioFeletti/portifolio',
   socials: SOCIALS,
   year: 2026,
 } as const;
