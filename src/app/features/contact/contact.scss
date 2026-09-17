@@ -4,7 +4,7 @@
 
 .contact {
   display: block;
-  padding: clamp(34px, 5vw, 76px) var(--gutter) 26px;
+  padding-block: clamp(34px, 5vw, 76px) 26px;
   border-top: 1px solid var(--color-line);
 }
 
@@ -17,8 +17,8 @@
 }
 
 .channels {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(215px, 100%), 1fr));
+  display: flex;
+  flex-direction: column;
   gap: clamp(18px, 3vw, 36px);
   margin: 0;
   padding-top: clamp(20px, 3vw, 32px);
@@ -32,7 +32,7 @@
 .label {
   margin-bottom: 10px;
   font-size: 10px;
-  font-weight: 900;
+  font-weight: 800;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--color-muted);
@@ -79,7 +79,7 @@
 
 .copyright {
   font-size: 11px;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--color-muted);

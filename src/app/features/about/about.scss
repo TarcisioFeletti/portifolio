@@ -1,10 +1,10 @@
 .about {
-  padding: var(--section-pad) var(--gutter);
+  padding-block: var(--section-pad);
 }
 
 .columns {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(290px, 100%), 1fr));
+  display: flex;
+  flex-direction: column;
   gap: clamp(22px, 4vw, 56px);
 }
 
@@ -33,11 +33,15 @@
 
 .stats {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(170px, 100%), 1fr));
+  grid-template-columns: 1fr;
   gap: 1px;
   margin: clamp(26px, 4vw, 52px) 0 0;
   background: var(--color-line);
   border: 1px solid var(--color-line);
+
+  @media (min-width: 480px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .stat {
@@ -61,7 +65,7 @@
 .stat-label {
   margin-top: 8px;
   font-size: 11px;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--color-muted);
